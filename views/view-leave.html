@@ -1,0 +1,420 @@
+<div class="container-fluid" ng-controller="leaveCtrl">
+      <header>
+         <nav>
+            <div class="row">
+               <div class="col-md-1">
+                  <div class="adra-logo">
+                     <img src="assets/img/logo.png" class="adra-display">
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="adra-search">
+                     <div id="custom-search-input">
+                        <div class="input-group col-md-8">
+                           <input type="text" class="search-query form-control" placeholder="Search here" />
+                           <span class="input-group-btn">
+                           <button class=" btn btn-danger" type="button">
+                           <span class=" glyphicon glyphicon-search"></span>
+                           </button>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-5">
+                  <div class="btn-employee">
+                     <a href="#/projects"><button type="button"  class="btn btn-default btn-lg employees-details1">PROJECTS</button></a>
+                     <a href="#/"><button type="button" class="btn btn-default btn-lg employees-details2">EMPLOYEES</button></a>
+                     <a href="#/payroll"><button type="button" class="btn btn-default btn-lg employees-details1">PAYROLL</button></a>
+                     <p class="employees-details user"><img src="assets/img/shape.svg">
+                     <div class="dropdown employees-details">
+                        <span class="dropdown-toggle" type="text" data-toggle="dropdown"><span> My name</span>
+                        <span class="caret"></span></span>
+                        <ul class="dropdown-menu">
+                           <li><a href="#">Settings</a></li>
+                           <li><a href="#">Help</a></li>
+                           <li><a href="#">Report a problem</a></li>
+                           <li><a href="#">Log out</a></li>
+                        </ul>
+                     </div>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <main>
+         <section id="profile" class="profile">
+            <div class="container-fluid">
+               <div class="row">
+                 <div class="col-md-4 well">
+                     <div class="employees-details">
+                         <img src="assets/img/profile.svg" class="profile-img">
+                     </div>
+                     <div class="employees-details">
+                         <p>
+                         <div class="dropdown">
+                             <span class="dropdown-toggle" type="text" data-toggle="dropdown"><span class="employee-name-profile">{{names}}</span>
+                             <span class="caret"></span></span>
+                             <ul class="dropdown-menu">
+                                 <li><a href="#/profile">Profile</a></li>
+                                 <li><a href="#/letter">Letter of employment</a></li>
+                                 <li><a href="#/salary">Salary certificate</a></li>
+                                 <li><a href="#/termination">Leaving certificate</a></li>
+                                 <li><a href="#/payslip">Pay slip</a></li>
+                                 <li><a href="#/finalpay">Final pay slip</a></li>
+                             </ul>
+                         </div>
+                         </p>
+                         <p class="employee-post">{{position}}</p>
+                     </div>
+                     <div class="edit employees-details">
+                         <span class="edit-btn">edit</span>
+                         <button class="btn btn-default btn-plus" type="button" id="edit-profile"><i class="fa fa-pencil"></i></button>
+                         <button class="btn btn-default btn-plus icon-arrow-left" type="button" id="icon-arrow-left"><i class="fa fa-arrow-left"></i></button>
+                     </div>
+                     <div class="profile-main-content">
+                         <div class="personnal-detail">
+                             <p><span class="employee-name">D.O.B:</span><span class="employee-post">{{dob}}</span></p>
+                             <p><span class="employee-name">ID:</span><span class="employee-post"> {{nid}}</span></p>
+                             <p><span class="employee-name">Tel:</span><span class="employee-name"> W</span><span class="employee-post"> {{telephone}}</span><span class="employee-name"> P</span><span class="employee-post"> 07843344323</span></p>
+                             <p><span class="employee-name">Education:</span><span class="employee-post">{{education}}</span></p>
+                             <p><span class="employee-name">Address:</span><span class="employee-post">{{address}}</span></p>
+                             <p><span class="employee-name">Project:</span><span class="employee-post">{{project}}</span></p>
+                         </div>
+                         <div class="profile-table-1">
+                             <table class="table">
+                                 <p><span class="employee-name">Dependants:</span></p>
+                                 <thead>
+                                     <tr class="table-header-style">
+                                         <th>Names</th>
+                                         <th>Relation</th>
+                                         <th>Date of birth</th>
+                                         <!-- <th></th> -->
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <tr>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                         <!-- <td></td> -->
+                                     </tr>
+                                     <tr class="name-one2" ng-repeat="dep in dependants">
+                                         <td>{{dep.names}}</td>
+                                         <td>{{dep.relation}}</td>
+                                         <td>{{dep.dob}}</td>
+                                         <!-- <td><span class="glyphicon glyphicon-remove"></span></td> -->
+                                     </tr>
+                                 </tbody>
+                             </table>
+                             <div class="fa-icon">
+                                 <!--ADD DATA IN TABLE-1-->
+                                 <div class="">
+                                     <div class="row">
+                                         <div class="col-sm-3 nopadding">
+                                             <div class="form-group">
+                                                 <input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="Name">
+                                             </div>
+                                         </div>
+                                         <div class="col-sm-3 nopadding">
+                                             <div class="form-group">
+                                                 <input type="text" class="form-control" id="Major" name="Major[]" value="" placeholder="relation">
+                                             </div>
+                                         </div>
+                                         <div class="col-sm-4 nopadding">
+                                             <div class="form-group">
+                                                 <input type="text" class="form-control" id="Degree" name="Degree[]" value="" placeholder="date-birth">
+                                             </div>
+                                         </div>
+                                         <div class="col-sm-2 nopadding">
+                                             <div class="form-group">
+                                                 <div class="input-group">
+                                                     <div class="input-group-btn">
+                                                         <button class="btn btn-default btn-plus" type="button"  onclick="education_fields4();"><i class="fa fa-plus"></i></button>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                         <div id="education_fields4">
+                                         </div>
+                                         <div class="clear"></div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <br><br>
+                         </div>
+                         <div class="profile-table-2">
+                             <table class="table">
+                                 <p><span class="employee-name">Emergency contact:</span></p>
+                                 <thead>
+                                     <tr class="table-header-style">
+                                         <th>Names</th>
+                                         <th>Relation</th>
+                                         <th>Date of birth</th>
+                                         <!-- <th></th> -->
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <tr>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                         <!-- <td></td> -->
+                                     </tr>
+                                     <tr class="name-one2" ng-repeat="cont in contacts">
+                                         <td>{{cont.names}}</td>
+                                         <td>{{cont.relation}}</td>
+                                         <td>{{cont.number}}</td>
+                                         <!-- <td><span class="glyphicon glyphicon-remove"></span></td> -->
+                                     </tr>
+                                 </tbody>
+                             </table>
+                             <!--ADD DATA IN TABLE-2-->
+                             <div class="panel-body">
+                                 <div class="row">
+                                     <div class="col-sm-3 nopadding">
+                                         <div class="form-group">
+                                             <input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="Name">
+                                         </div>
+                                     </div>
+                                     <div class="col-sm-3 nopadding">
+                                         <div class="form-group">
+                                             <input type="text" class="form-control" id="Major" name="Major[]" value="" placeholder="relation">
+                                         </div>
+                                     </div>
+                                     <div class="col-sm-4 nopadding">
+                                         <div class="form-group">
+                                             <input type="text" class="form-control" id="Degree" name="Degree[]" value="" placeholder="date-birth">
+                                         </div>
+                                     </div>
+                                     <div class="col-sm-2 nopadding">
+                                         <div class="form-group">
+                                             <div class="input-group">
+                                                 <div class="input-group-btn">
+                                                     <button class="btn btn-default btn-plus" type="button"  onclick="education_fields5();"><i class="fa fa-plus"></i></button>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div id="education_fields5">
+                                     </div>
+                                     <div class="clear"></div>
+                                 </div>
+                             </div>
+                             <a href=""><button type="button"  class="btn btn-default btn-lg terminate-button" id="project">Terminate contract</button></a>
+                         </div>
+                     </div>
+                     <div class="edit-profile-form">
+                         <form>
+                             <div class="form-group">
+                                 <label>D.O.B</label>
+                                 <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
+                                 <div class="form-group">
+                                     <label for="text">ID:</label>
+                                     <input type="text" class="form-control" placeholder="ID" id="id">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="text">Tel:</label>
+                                     <input type="text" class="form-control" placeholder="Work-tel" id="tel1"><br>
+                                     <input type="text" class="form-control" placeholder="Personnal-tel" id="tel2">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="text">Education:</label>
+                                     <input type="text" class="form-control" placeholder="education" id="id">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="text">Address:</label>
+                                     <input type="text" class="form-control" placeholder="address" id="id">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="text">Project:</label>
+                                     <input type="text" class="form-control" placeholder="project" id="id">
+                                 </div>
+                          <div class="col-md-12">
+                          <h4>Dependants:</h4>
+                          <div class="col-md-4">
+                             <form>
+                                <div class="form-group">
+                                   <label>Name</label>
+                                   <input type="text" class="form-control" placeholder="Id_number" id="">
+                                </div>
+                             </form>
+                          </div>
+                          <div class="col-md-4">
+                             <form>
+                                <div class="form-group">
+                                   <label>Relation</label>
+                                   <input type="text" class="form-control" placeholder="telephone" id="">
+                                </div>
+                             </form>
+                          </div>
+                          <div class="col-md-4">
+                             <form>
+                                <div class="form-group">
+                                   <label>D.O.B</label>
+                                   <input type="date" class="form-control" id="exampleInputDOB2" placeholder="Date of Birth">
+                                </div>
+                             </form>
+                          </div>
+                       </div>
+                       <div class="col-md-12">
+                          <h4>Emergency contact:</h4>
+                          <div class="col-md-4">
+                             <form>
+                                <div class="form-group">
+                                   <label>Name</label>
+                                   <input type="text" class="form-control" placeholder="Id_number" id="">
+                                </div>
+                             </form>
+                          </div>
+                          <div class="col-md-4">
+                             <form>
+                                <div class="form-group">
+                                   <label>Relation</label>
+                                   <input type="text" class="form-control" placeholder="telephone" id="">
+                                </div>
+                             </form>
+                          </div>
+                          <div class="col-md-4">
+                             <form>
+                                <div class="form-group">
+                                   <label>D.O.B</label>
+                                   <input type="date" class="form-control" id="exampleInputDOB2" placeholder="Date of Birth">
+                                </div>
+                             </form>
+                          </div>
+                       </div>
+                       <a href=""><button type="button"  class="btn btn-default btn-lg terminate-button" id="">SAVE</button></a>
+                       </form>
+                       </div>
+                       </div>
+                   </div>
+
+                    <div class="col-md-8 table-bg-color">
+                     <div class="btn-leave">
+                        <a href="#/profile"><button type="button" class="btn btn-default btn-lg view-leave view-profile">View Profile</button></a>
+                     </div>
+                     <section id="view-leaves" class="view-leaves">
+                        <table class="table">
+                           <p><span class="employee-name">10 items:</span></p>
+                           <thead>
+                              <tr class="table-header-style2">
+                                 <th></th>
+                                 <th>Type</th>
+                                 <th>Reason</th>
+                                 <th>Start Date</th>
+                                 <th>Duration(Days)</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                              </tr>
+                              <tr class="active name-one" ng-repeat="item in leaves">
+                                 <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                                 <td>{{item.vac_type}}</td>
+                                 <td>{{item.reason}}</td>
+                                 <td>{{item.start_date}}</td>
+                                 <td>{{item.duration}}</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <div class="fa-icon">
+                           <button class="btn btn-lg btn-default btn-circle" data-toggle="modal" data-target="#myModal3"><i class="fa fa-plus"></i></button>
+                        </div>
+                        <div class="text-center">
+                           <div class="pagination">
+                              <a href="#">&laquo;</a>
+                              <a href="#">1</a>
+                              <a class="#" href="#">2</a>
+                              <a href="#">3</a>
+                              <a href="#">4</a>
+                              <a href="#">5</a>
+                              <a href="#">6</a>
+                              <a href="#">&raquo;</a>
+                           </div>
+                        </div>
+                     </section>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!--MODAL-LEAVE-->
+         <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header ">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <div class="header-modal">
+                        <h4 class="modal-title registration" id="gridSystemModalLabel">Leave entry</h4>
+                     </div>
+                  </div>
+                  <div class="modal-body">
+                     <div class="row">
+                        <div class="col-md-4">
+                           <form>
+                              <div class="form-group">
+                                 <label for="sel1">Gender</label>
+                                 <select class="form-control" ng-model="leave_type" id="leave_type">
+                                    <option hidden>Select</option>
+                                    <option value="1">Work leave</option>
+                                    <option value="2">other</option>
+                                 </select>
+                              </div>
+                           </form>
+                        </div>
+                        <div class="col-md-6">
+                           <form class="leave-entry-style">
+                              <div class="form-group" id="hidden_div2" style="display: none;">
+                                 <label for="email">Other reason</label>
+                                 <input type="text" class="form-control budgeted" ng-model="reason" id="reason" placeholder="type here">
+                              </div>
+                              <div id="hidden_div" style="display: none;" class="remaining-style">
+                              <p>work leave remaining days: {{remains}}</p>
+                              <div>
+                                 <label for="email">Reason</label>
+                                 <input type="text" class="form-control budgeted" ng-model="reason" id="reason" placeholder="type here">
+                              </div>
+                            </div>
+                            <div id="hidden_div3" style="display: none;" class="remaining-style">
+                            <p>The days have been exhausted for this person!!</p>
+                            </div>
+                           </form>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-4">
+                           <form>
+                              <div class="form-group">
+                                 <label for="text">Start date</label>
+                                 <input type="text" class="form-control budgeted" ng-model="start_date" id="start_date" placeholder="01/01/2017">
+                              </div>
+                           </form>
+                        </div>
+                        <div class="col-md-4">
+                           <form>
+                              <div class="form-group">
+                                 <label for="text">End date</label>
+                                 <input type="text" class="form-control budgeted" ng-model="end_date" id="end_date" placeholder="01/01/2017">
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                     <div style="display:None" id="message">
+                       <p style="color:green">Leave added!!</p>
+                     </div>
+                     <button type="submit" id="addleave" class="btn btn-success btn-add">ADD</button>
+
+                  </div>
+                  <!-- /.modal-content -->
+                  <!-- /.modal-dialog -->
+               </div>
+               <!-- /.modal -->
+            </div>
+         </div>
+      </main>
+    </div>

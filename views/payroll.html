@@ -1,0 +1,126 @@
+      <div class="container-fluid" ng-controller="payrollCtrl">
+         <header>
+            <nav>
+               <div class="row">
+                  <div class="col-md-1">
+                     <div class="adra-logo">
+                        <img src="assets/img/logo.png" class="adra-display">
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="adra-search">
+                        <div id="custom-search-input">
+                           <div class="input-group col-md-8">
+                              <input type="text" class="search-query form-control" placeholder="Search here" />
+                              <span class="input-group-btn">
+                              <button class=" btn btn-danger" type="button">
+                              <span class=" glyphicon glyphicon-search"></span>
+                              </button>
+                              </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-5">
+                     <div class="btn-employee">
+                        <a href="#/projects"><button type="button"  class="btn btn-default btn-lg employees-details1">PROJECTS</button></a>
+                        <a href="#/"><button type="button" class="btn btn-default btn-lg employees-details2" id="employee">EMPLOYEES</button></a>
+                        <a href="#/payroll"><button type="button" class="btn btn-default btn-lg employees-details1">PAYROLL</button></a>
+                        <p class="employees-details user"><img src="assets/img/shape.svg">
+                        <div class="dropdown employees-details">
+                           <span class="dropdown-toggle" type="text" data-toggle="dropdown"><span> My name</span>
+                           <span class="caret"></span></span>
+                           <ul class="dropdown-menu">
+                              <li><a href="#">Settings</a></li>
+                              <li><a href="#">Help</a></li>
+                              <li><a href="#">Report a problem</a></li>
+                              <li><a href="#">Log out</a></li>
+                           </ul>
+                        </div>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="row">
+                     <div class="dropdown drop-employer">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">sort by project
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                           <li><a href="#/payroll">Project</a></li>
+                           <li><a href="#/terminated">Terminated</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </header>
+         <main>
+            <div class="row">
+               <div class="container">
+                  <section id="payroll-list" class="payroll-list">
+                     <table class="table">
+                        <thead>
+                           <tr>
+                              <th></th>
+                              <th>Names</th>
+                              <th>Position</th>
+                              <th>Taxable income</th>
+                              <th>Severance</th>
+                              <th>Employer CRS</th>
+                              <th>Gross pay</th>
+                              <th>
+                                 <CRS> 8.6%</CRS>
+                              </th>
+                              <th>TPR</th>
+                              <th>Advance</th>
+                              <th>Total Deduction</th>
+                              <th>Net salary</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                           </tr>
+                           <tr ng-repeat="item in allpays">
+                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                              <td>{{item.Names}}</td>
+                              <td>{{item.position}}</td>
+                              <td>{{item.taxable}}</td>
+                              <td>{{item.severance}}</td>
+                              <td>{{item.employer_rssb}}</td>
+                              <td>{{item.Gross_pay}}</td>
+                              <td>{{item.CSR}}</td>
+                              <td>{{item.TPR}}</td>
+                              <td>{{item.Advance}}</td>
+                              <td>{{item.Total_Deductables}}</td>
+                              <td>{{item.Net_Salary}}</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <div class="fa-icon">
+                        <button class="btn btn-lg btn-default btn-circle" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></button>
+                     </div>
+                     <div class="text-center">
+                        <div class="pagination">
+                           <a href="#">&laquo;</a>
+                           <a href="#">1</a>
+                           <a class="#" href="#">2</a>
+                           <a href="#">3</a>
+                           <a href="#">4</a>
+                           <a href="#">5</a>
+                           <a href="#">6</a>
+                           <a href="#">&raquo;</a>
+                        </div>
+                     </div>
+                  </section>
+               </div>
+            </div>
+            </section>
+         </main>
+         <footer>
+         </footer>
+      </div>

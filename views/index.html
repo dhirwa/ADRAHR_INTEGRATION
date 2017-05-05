@@ -1,0 +1,459 @@
+      <div class="container-fluid" ng-controller="employeesCtrl">
+         <header>
+            <nav>
+               <div class="row">
+                  <div class="col-md-1">
+                     <div class="adra-logo">
+                        <img src="assets/img/logo.png" class="adra-display">
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="adra-search">
+                        <div id="custom-search-input">
+                           <div class="input-group col-md-8">
+                              <input type="text" class="search-query form-control" placeholder="Search here" />
+                              <span class="input-group-btn">
+                              <button class=" btn btn-danger" type="button">
+                              <span class=" glyphicon glyphicon-search"></span>
+                              </button>
+                              </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-5">
+                     <div class="btn-employee">
+                        <a href="#/projects"><button type="button"  class="btn btn-default btn-lg employees-details1">PROJECTS</button></a>
+                        <a href="#/"><button type="button" class="btn btn-default btn-lg employees-details2" id="employee">EMPLOYEES</button></a>
+                        <a href="#/payroll"><button type="button" class="btn btn-default btn-lg employees-details1">PAYROLL</button></a>
+                        <p class="employees-details user"><img src="assets/img/shape.svg">
+                        <div class="dropdown employees-details">
+                           <span class="dropdown-toggle" type="text" data-toggle="dropdown"><span> My name</span>
+                           <span class="caret"></span></span>
+                           <ul class="dropdown-menu">
+                              <li><a href="#">Settings</a></li>
+                              <li><a href="#">Help</a></li>
+                              <li><a href="#">Report a problem</a></li>
+                              <li><a href="#">Log out</a></li>
+                           </ul>
+                        </div>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="row">
+                     <div class="dropdown drop-employer">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">sort by project
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                           <li><a href="project.html">Project</a></li>
+                           <li><a href="terminated.html">Terminated</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </header>
+         <main>
+            <div class="row">
+               <div class="container">
+                  <div class="employee-list">
+                     <table class="table">
+                        <thead>
+                           <tr>
+                              <th></th>
+                              <th>Employee Name</th>
+                              <th>Project Name</th>
+                              <th>Position</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr ng-repeat="item in allnames" ng-click=onprofile()>
+                              <td></td>
+                              <td>{{item.names}}</td>
+                              <td>{{item.projectname}}</td>
+                              <td>{{item.position}}</td>
+                           </tr>
+                           </tbody>
+                     </table>
+                     <div class="fa-icon">
+                        <button class="btn btn-lg btn-default btn-circle" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"></i></button>
+                     </div>
+                     <div class="text-center">
+                        <div class="pagination">
+                           <a href="#">&laquo;</a>
+                           <a href="#">1</a>
+                           <a class="#" href="#">2</a>
+                           <a href="#">3</a>
+                           <a href="#">4</a>
+                           <a href="#">5</a>
+                           <a href="#">6</a>
+                           <a href="#">&raquo;</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!--VIEW LEAVE-->
+            </div>
+      </div>
+      <!--MODAL-EMPLOYEE-->
+      <div class="modal fade" id="myModal1" role="dialog" aria-labelledby="gridSystemModalLabel">
+     <div class="modal-dialog" role="document">
+        <div class="modal-content">
+           <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <div class="header-modal">
+                 <h4 class="modal-title registration" id="gridSystemModalLabel">Employee Registration</h4>
+              </div>
+           </div>
+           <div class="modal-body" ng-controller>
+              <section class="registration-show1">
+                 <div class="row">
+                    <div class="reigistration-1">
+                       <div class="col-md-12">
+                          <div class="col-md-4">
+                             <form>
+                                <div class="form-group">
+                                   <label>first name</label>
+                                   <input type="text" class="form-control" placeholder="first-name"  ng-model="first_name" id="first-name">
+                                </div>
+                             </form>
+                          </div>
+                          <div class="col-md-4">
+                             <form>
+                                <div class="form-group">
+                                   <label>last name</label>
+                                   <input type="text" class="form-control" placeholder="last name" ng-model="last_name" id="last-name">
+                                </div>
+                             </form>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="col-md-12">
+                       <div class="col-md-4">
+                          <form>
+                             <div class="form-group">
+                                <label>National id_Nber</label>
+                                <input type="text" class="form-control" placeholder="Id_number" ng-model="nid" id="id_number">
+                             </div>
+                          </form>
+                       </div>
+                       <div class="col-md-4">
+                          <form>
+                             <div class="form-group">
+                                <label>Telephone</label>
+                                <input type="text" class="form-control" placeholder="telephone" ng-model="telephone" id="phone">
+                             </div>
+                          </form>
+                       </div>
+                       <div class="col-md-4">
+                          <form>
+                             <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="email" ng-model="email" id="email">
+                             </div>
+                          </form>
+                       </div>
+                    </div>
+                    <div class="col-md-12">
+                       <div class="col-md-3">
+                          <form>
+                             <div class="form-group">
+                                <label>date of birth</label>
+                                <input type="text" class="form-control" placeholder="month" ng-model="month" id="">
+                             </div>
+                          </form>
+                       </div>
+                       <div class="col-md-3">
+                          <form>
+                             <div class="form-group">
+                                <label class="day-style">day</label>
+                                <input type="text" class="form-control" placeholder="day" ng-model="day" id="">
+                             </div>
+                          </form>
+                       </div>
+                       <div class="col-md-3">
+                          <form>
+                             <div class="form-group">
+                                <label class="day-style">Email</label>
+                                <input type="email" class="form-control" placeholder="year" ng-model="year" id="">
+                             </div>
+                          </form>
+                       </div>
+                       <div class="col-md-3">
+                          <form>
+                             <div class="form-group">
+                                <label for="sel1">Gender</label>
+                                <select class="form-control" ng-model="gender" id="sel1">
+                                   <option hidden>Select</option>
+                                   <option>Male</option>
+                                   <option>female</option>
+                                </select>
+                             </div>
+                          </form>
+                       </div>
+                    </div>
+                    <div class="col-md-12">
+                       <div class="col-md-4">
+                          <form>
+                             <div class="form-group">
+                                <label>Education</label>
+                                <input type="text" class="form-control" placeholder="education" ng-model="education" id="first-name">
+                             </div>
+                          </form>
+                       </div>
+                       <div class="col-md-4">
+                          <form>
+                             <div class="form-group">
+                                <label>Home Addresse</label>
+                                <input type="text" class="form-control" placeholder="addresse" ng-model="address" id="last-name">
+                             </div>
+                          </form>
+                       </div>
+                    </div>
+                    <div class="col-md-12">
+                       <div class="panel-body">
+                          <span>Emergency Contact</span>
+                          <div class="row">
+                             <div class="col-sm-3 nopadding">
+                                <div class="form-group">
+                                   <input type="text" class="form-control" ng-model="emer.names" id="Schoolname" name="Schoolname[]" value="" placeholder="Name">
+                                </div>
+                             </div>
+                             <div class="col-sm-3 nopadding">
+                                <div class="form-group">
+                                   <input type="text" class="form-control" id="Major" name="Major[]" ng-model="emer.relation" value="" placeholder="relation">
+                                </div>
+                             </div>
+                             <div class="col-sm-3 nopadding">
+                                <div class="form-group">
+                                   <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="emer.number" placeholder="Phone-nber">
+                                </div>
+                             </div>
+                             <div class="col-sm-3 nopadding">
+                                <div class="form-group">
+                                   <div class="input-group">
+                                      <div class="input-group-btn">
+                                         <button class="btn btn-default btn-plus" type="button"  onclick="education_fields();"><i class="fa fa-plus"></i></button>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                             <div id="education_fields">
+                             </div>
+                             <div class="clear"></div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="col-md-12">
+                       <div class="panel-body">
+                          <span>Dependents</span>
+                          <div class="row">
+                             <div class="col-sm-3 nopadding">
+                                <div class="form-group">
+                                   <input type="text" class="form-control" id="Schoolname" name="Schoolname[]"  ng-model="dep.names" value="" placeholder="Name">
+                                </div>
+                             </div>
+                             <div class="col-sm-3 nopadding">
+                                <div class="form-group">
+                                   <input type="text" class="form-control" id="Major" name="Major[]" value="" ng-model="dep.relation" placeholder="relation">
+                                </div>
+                             </div>
+                             <div class="col-sm-3 nopadding">
+                                <div class="form-group">
+                                   <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="dep.birthdate" placeholder="birthdate">
+                                </div>
+                             </div>
+                             <div class="col-sm-3 nopadding">
+                                <div class="form-group">
+                                   <div class="input-group">
+                                      <div class="input-group-btn">
+                                         <button class="btn btn-default btn-plus" type="button"  onclick="education_fields2();"><i class="fa fa-plus"></i></button>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                             <div id="education_fields2">
+                             </div>
+                             <div class="clear"></div>
+                          </div>
+                       </div>
+                       <button type="submit" class="btn btn-success btn-add" id="next">NEXT</button>
+                    </div>
+                 </div>
+              </section>
+              <section class="registration-show2">
+                 <div class="">
+                    <div class="col-md-12">
+                       <form>
+                          <div class="form-group">
+                             <label for="sel1">Project Title</label>
+                             <select class="form-control" ng-model="project_title" id="empproj">
+                             </select>
+                          </div>
+                          <div class="form-group">
+                             <label for="sel1">position</label>
+                             <select class="form-control" id="sel1" ng-model="position">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                             </select>
+                          </div>
+                       </form>
+                    </div>
+                    <div class="row">
+                       <div class="col-md-4">
+                          <div class="form-group">
+                             <label for="email">Budgeted pay</label>
+                             <input type="email" class="form-control budgeted" ng-model="budgeted_salary" id="email" placeholder="3500 USD">
+                          </div>
+                       </div>
+                       <div class="col-md-4">
+                          <div class="form-group">
+                             <label for="sel1">Staff Location</label>
+                             <select class="form-control" ng-model="staff_loc" id="sel1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                             </select>
+                          </div>
+                       </div>
+                    </div>
+                    <label for="sel1">Attachement</label><br>
+                    <div class="col-md-12">
+                       <!-- image-preview-filename input [CUT FROM HERE]-->
+                       <div class="input-group image-preview">
+                          <input type="text" class="form-control image-preview-filename" placeholder="Contract" ng-model="contract" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                          <span class="input-group-btn">
+                             <!-- image-preview-clear button -->
+                             <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                             <span class="glyphicon glyphicon-remove"></span> Clear
+                             </button>
+                             <!-- image-preview-input -->
+                             <div class="btn btn-default image-preview-input">
+                                <img src="assets/img/attachment.png">
+                                <span class="image-preview-input-title"></span>
+                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                             </div>
+                          </span>
+                       </div>
+                       <!-- /input-group image-preview [TO HERE]-->
+                    </div>
+                    <div class="col-md-12">
+                       <!-- image-preview-filename input [CUT FROM HERE]-->
+                       <div class="input-group image-preview2">
+                          <input type="text" class="form-control image-preview-filename2 form-style" placeholder="CV" ng-model="cv" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                          <span class="input-group-btn">
+                             <!-- image-preview-clear button -->
+                             <button type="button" class="btn btn-default image-preview-clear2" style="display:none;">
+                             <span class="glyphicon glyphicon-remove"></span> Clear
+                             </button>
+                             <!-- image-preview-input -->
+                             <div class="btn btn-default image-preview-input2">
+                                <img src="assets/img/attachment.png">
+                                <span class="image-preview-input-title2"></span>
+                                <input type="file"  accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                             </div>
+                          </span>
+                       </div>
+                       <!-- /input-group image-preview [TO HERE]-->
+                    </div>
+                    <div class="col-md-12">
+                       <!-- image-preview-filename input [CUT FROM HERE]-->
+                       <div class="input-group image-preview3">
+                          <input type="text" class="form-control image-preview-filename3" placeholder="National ID" ng-model=nationalId"" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                          <span class="input-group-btn">
+                             <!-- image-preview-clear button -->
+                             <button type="button" class="btn btn-default image-preview-clear3" style="display:none;">
+                             <span class="glyphicon glyphicon-remove"></span> Clear
+                             </button>
+                             <!-- image-preview-input -->
+                             <div class="btn btn-default image-preview-input3">
+                                <!-- <span class="glyphicon glyphicon-folder-open"></span> -->
+                                <img src="assets/img/attachment.png">
+                                <span class="image-preview-input-title3"></span>
+                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                             </div>
+                          </span>
+                       </div>
+                       <!-- /input-group image-preview [TO HERE]-->
+                    </div>
+                    <a href="index.htm"><button type="submit"  ng-model="addEmp()" class="btn btn-success btn-add">ADD</button></a>
+                    <button type="submit" class="btn btn-success btn-add" id="back">BACK</button>
+                 </div>
+                 <!-- /.modal-content -->
+              </section>
+              <!-- /.modal-dialog -->
+           </div>
+           <!-- /.modal -->
+        </div>
+     </div>
+  </div>
+      <!--MODAL-LEAVE-->
+      <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header ">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="header-modal">
+               <h4 class="modal-title registration" id="gridSystemModalLabel">Leave entry</h4>
+            </div>
+         </div>
+         <div class="modal-body">
+            <div class="row">
+               <div class="col-md-4">
+                  <form>
+                     <div class="form-group">
+                        <label for="sel1">Gender</label>
+                        <select class="form-control" id="test">
+                           <option hidden>Select</option>
+                           <option value="1">Work leave</option>
+                           <option value="2">other</option>
+                        </select>
+                     </div>
+                  </form>
+               </div>
+               <div class="col-md-6">
+                  <form class="leave-entry-style">
+                     <div class="form-group" id="hidden_div2" style="display: none;">
+                        <label for="email">Other reason</label>
+                        <input type="text" class="form-control budgeted" id="" placeholder="type here">
+                     </div>
+                     <p id="hidden_div" style="display: none;" class="remaining-style">work leave remaining days: 10 Days</p>
+                  </form>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <form>
+                     <div class="form-group">
+                        <label for="text">Start date</label>
+                        <input type="text" class="form-control budgeted" id="" placeholder="01/01/2017">
+                     </div>
+                  </form>
+               </div>
+               <div class="col-md-4">
+                  <form>
+                     <div class="form-group">
+                        <label for="text">End date</label>
+                        <input type="text" class="form-control budgeted" id="email" placeholder="01/01/2017">
+                     </div>
+                  </form>
+               </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-add">ADD</button>
+         </div>
+         <!-- /.modal-content -->
+         <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+   </div>
+</div>
+      <!--MODAL-PROJECT-->
+      </main>
+      <footer>
+      </footer>
+      </div>
