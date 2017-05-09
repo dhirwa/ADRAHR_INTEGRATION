@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("#edit-profile").click(function(e){
+      $("#edit-profile").click(function(e){
          event.preventDefault();
          $(".profile-main-content,#edit-profile,.edit-btn").hide();
          $(".edit-profile-form,#icon-arrow-left").show();

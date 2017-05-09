@@ -11,7 +11,7 @@
                      <div class="adra-search">
                         <div id="custom-search-input">
                            <div class="input-group col-md-8">
-                              <input type="text" class="search-query form-control" placeholder="Search here" />
+                              <input type="text" class="search-query form-control" id="search" placeholder="Search here" />
                               <span class="input-group-btn">
                               <button class=" btn btn-danger" type="button">
                               <span class=" glyphicon glyphicon-search"></span>
@@ -59,7 +59,7 @@
             <div class="row">
                <div class="container">
                   <div class="employee-list">
-                     <table class="table">
+                     <table class="table" id="tblData">
                         <thead>
                            <tr>
                               <th></th>
@@ -69,13 +69,13 @@
                            </tr>
                         </thead>
                         <tbody>
-                           <tr ng-repeat="item in allnames" ng-click=onprofile()>
-                              <td></td>
+                           <tr class="name-one" ng-repeat="item in allnames" ng-click="onprofile(item.employeeid)" id="clickable">
+                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
                               <td>{{item.names}}</td>
                               <td>{{item.projectname}}</td>
                               <td>{{item.position}}</td>
                            </tr>
-                           </tbody>
+                        </tbody>
                      </table>
                      <div class="fa-icon">
                         <button class="btn btn-lg btn-default btn-circle" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"></i></button>
@@ -157,15 +157,15 @@
                        </div>
                     </div>
                     <div class="col-md-12">
-                       <div class="col-md-3">
+                       <div class="col-md-4">
                           <form>
                              <div class="form-group">
-                                <label>date of birth</label>
-                                <input type="text" class="form-control" placeholder="month" ng-model="month" id="">
+                               <label>Date of Birth</label>
+                               <input type="text" class="form-control" placeholder="yyyy-mm-dd" ng-model="email" id="birthdate">
                              </div>
                           </form>
                        </div>
-                       <div class="col-md-3">
+                       <!-- <div class="col-md-3">
                           <form>
                              <div class="form-group">
                                 <label class="day-style">day</label>
@@ -180,15 +180,15 @@
                                 <input type="email" class="form-control" placeholder="year" ng-model="year" id="">
                              </div>
                           </form>
-                       </div>
-                       <div class="col-md-3">
+                       </div> -->
+                       <div class="col-md-4">
                           <form>
                              <div class="form-group">
                                 <label for="sel1">Gender</label>
-                                <select class="form-control" ng-model="gender" id="sel1">
+                                <select class="form-control" ng-model="gender" id="gender">
                                    <option hidden>Select</option>
-                                   <option>Male</option>
-                                   <option>female</option>
+                                   <option value="M">Male</option>
+                                   <option value="F">Female</option>
                                 </select>
                              </div>
                           </form>
@@ -199,7 +199,7 @@
                           <form>
                              <div class="form-group">
                                 <label>Education</label>
-                                <input type="text" class="form-control" placeholder="education" ng-model="education" id="first-name">
+                                <input type="text" class="form-control" placeholder="education" ng-model="education" id="education">
                              </div>
                           </form>
                        </div>
@@ -207,7 +207,7 @@
                           <form>
                              <div class="form-group">
                                 <label>Home Addresse</label>
-                                <input type="text" class="form-control" placeholder="addresse" ng-model="address" id="last-name">
+                                <input type="text" class="form-control" placeholder="addresse" ng-model="address" id="address">
                              </div>
                           </form>
                        </div>
@@ -218,17 +218,17 @@
                           <div class="row">
                              <div class="col-sm-3 nopadding">
                                 <div class="form-group">
-                                   <input type="text" class="form-control" ng-model="emer.names" id="Schoolname" name="Schoolname[]" value="" placeholder="Name">
+                                   <input type="text" class="form-control" ng-model="emer.names" id="emernames" name="Schoolname[]" value="" placeholder="Name">
                                 </div>
                              </div>
                              <div class="col-sm-3 nopadding">
                                 <div class="form-group">
-                                   <input type="text" class="form-control" id="Major" name="Major[]" ng-model="emer.relation" value="" placeholder="relation">
+                                   <input type="text" class="form-control" id="emerrelation" name="Major[]" ng-model="emer.relation" value="" placeholder="relation">
                                 </div>
                              </div>
                              <div class="col-sm-3 nopadding">
                                 <div class="form-group">
-                                   <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="emer.number" placeholder="Phone-nber">
+                                   <input type="text" class="form-control" id="emernumber" name="Degree[]" value="" ng-model="emer.number" placeholder="Phone-nber">
                                 </div>
                              </div>
                              <div class="col-sm-3 nopadding">
@@ -252,17 +252,17 @@
                           <div class="row">
                              <div class="col-sm-3 nopadding">
                                 <div class="form-group">
-                                   <input type="text" class="form-control" id="Schoolname" name="Schoolname[]"  ng-model="dep.names" value="" placeholder="Name">
+                                   <input type="text" class="form-control" id="depnames" name="Schoolname[]"  ng-model="dep.names" value="" placeholder="Name">
                                 </div>
                              </div>
                              <div class="col-sm-3 nopadding">
                                 <div class="form-group">
-                                   <input type="text" class="form-control" id="Major" name="Major[]" value="" ng-model="dep.relation" placeholder="relation">
+                                   <input type="text" class="form-control" id="deprelation" name="Major[]" value="" ng-model="dep.relation" placeholder="relation">
                                 </div>
                              </div>
                              <div class="col-sm-3 nopadding">
                                 <div class="form-group">
-                                   <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="dep.birthdate" placeholder="birthdate">
+                                   <input type="text" class="form-control" id="depdob" name="Degree[]" value="" ng-model="dep.birthdate" placeholder="birthdate">
                                 </div>
                              </div>
                              <div class="col-sm-3 nopadding">
@@ -290,34 +290,32 @@
                           <div class="form-group">
                              <label for="sel1">Project Title</label>
                              <select class="form-control" ng-model="project_title" id="empproj">
-                             </select>
+                              </select>
                           </div>
                           <div class="form-group">
                              <label for="sel1">position</label>
-                             <select class="form-control" id="sel1" ng-model="position">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                             </select>
+                             <input type="email" class="form-control budgeted" ng-model="position" id="empposition" placeholder="position">
                           </div>
                        </form>
                     </div>
                     <div class="row">
+                      <div class="col-md-4">
+                         <div class="form-group">
+                            <label for="email">Start Date</label>
+                            <input type="text" class="form-control" ng-model="startd" id="startd" placeholder="yyyy-mm-dd">
+                         </div>
+                      </div>
+
                        <div class="col-md-4">
                           <div class="form-group">
                              <label for="email">Budgeted pay</label>
-                             <input type="email" class="form-control budgeted" ng-model="budgeted_salary" id="email" placeholder="3500 USD">
+                             <input type="text" class="form-control budgeted" ng-model="salary" id="salary" placeholder="salary">
                           </div>
                        </div>
                        <div class="col-md-4">
                           <div class="form-group">
                              <label for="sel1">Staff Location</label>
-                             <select class="form-control" ng-model="staff_loc" id="sel1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                             <select class="form-control" ng-model="staff_loc" id="locations">
                              </select>
                           </div>
                        </div>
@@ -381,7 +379,10 @@
                        </div>
                        <!-- /input-group image-preview [TO HERE]-->
                     </div>
-                    <a href="index.htm"><button type="submit"  ng-model="addEmp()" class="btn btn-success btn-add">ADD</button></a>
+                    <div style="display:None" id="empmessage">
+                      <p style="color:green">Employee added!!</p>
+                    </div>
+                    <button type="submit"  id="addEmp" class="btn btn-success btn-add">ADD</button>
                     <button type="submit" class="btn btn-success btn-add" id="back">BACK</button>
                  </div>
                  <!-- /.modal-content -->

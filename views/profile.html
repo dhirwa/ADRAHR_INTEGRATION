@@ -61,7 +61,7 @@
                             <li><a href="#/letter">Letter of employment</a></li>
                             <li><a href="#/salary">Salary certificate</a></li>
                             <li><a href="#/termination">Leaving certificate</a></li>
-                            <li><a href="#/payslip">Pay slip</a></li>
+                            <li><a href="#/pay">Pay slip</a></li>
                             <li><a href="#/finalpay">Final pay slip</a></li>
                         </ul>
                     </div>
@@ -69,11 +69,11 @@
                     <p class="employee-post">{{position}}</p>
                 </div>
                 <div class="edit employees-details">
-                    <span class="edit-btn">edit</span>
+                    <label id="edit"><span class="edit-btn">edit</span></label>
                     <button class="btn btn-default btn-plus" type="button" id="edit-profile"><i class="fa fa-pencil"></i></button>
                     <button class="btn btn-default btn-plus icon-arrow-left" type="button" id="icon-arrow-left"><i class="fa fa-arrow-left"></i></button>
                 </div>
-                <div class="profile-main-content">
+                <div class="profile-main-content" id="prof">
                     <div class="personnal-detail">
                         <p><span class="employee-name">D.O.B:</span><span class="employee-post">{{dob}}</span></p>
                         <p><span class="employee-name">ID:</span><span class="employee-post"> {{nid}}</span></p>
@@ -205,31 +205,57 @@
                         <a href=""><button type="button"  class="btn btn-default btn-lg terminate-button" id="project">Terminate contract</button></a>
                     </div>
                 </div>
-                <div class="edit-profile-form">
+                <div class="edit-profile-form" id="editp">
                     <form>
+                      <div class="form-group">
+                          <label for="text">First name:</label>
+                          <input type="text" class="form-control" placeholder="first name" value="{{first}}" id="first2">
+                      </div>
+                      <div class="form-group">
+                          <label for="text">Last name:</label>
+                          <input type="text" class="form-control" placeholder="last" value="{{last}}" id="last2">
+                      </div>
                         <div class="form-group">
                             <label>D.O.B</label>
-                            <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
+                            <input type="date" class="form-control" id="exampleInputDOB1" ng-model="dob2" placeholder="Date of Birth">
                             <div class="form-group">
                                 <label for="text">ID:</label>
-                                <input type="text" class="form-control" placeholder="ID" id="id">
+                                <input type="text" class="form-control" placeholder="ID" id="nid2" value="{{nid}}">
                             </div>
                             <div class="form-group">
                                 <label for="text">Tel:</label>
-                                <input type="text" class="form-control" placeholder="Work-tel" id="tel1"><br>
+                                <input type="text" class="form-control" placeholder="Work-tel" id="tel1" value="{{telephone}}"><br>
                                 <input type="text" class="form-control" placeholder="Personnal-tel" id="tel2">
                             </div>
                             <div class="form-group">
                                 <label for="text">Education:</label>
-                                <input type="text" class="form-control" placeholder="education" id="id">
+                                <input type="text" class="form-control" placeholder="education" id="educ2" value="{{education}}">
                             </div>
                             <div class="form-group">
                                 <label for="text">Address:</label>
-                                <input type="text" class="form-control" placeholder="address" id="id">
+                                <input type="text" class="form-control" placeholder="address" id="address2" value="{{address}}">
                             </div>
                             <div class="form-group">
                                 <label for="text">Project:</label>
-                                <input type="text" class="form-control" placeholder="project" id="id">
+                                <input type="text" class="form-control" placeholder="project" id="projid" value="{{project}}">
+                                <select class="form-control" style="display:None" id="empproj"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="text">Locaton:</label>
+                                <input type="text" class="form-control" placeholder="project" id="locat" value="{{location}}">
+                                <select class="form-control" id="locations"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="text">Position:</label>
+                                <input type="text" class="form-control" placeholder="positon" id="pos2" value="{{position}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="text">Starting date:</label>
+                                <input type="text" class="form-control" placeholder="yyyy-mm-dd" id="startd">
+                            </div>
+                            <div class="form-group">
+                                <label for="text">Salary:</label>
+                                <input type="text" class="form-control" placeholder="positon" id="sal2" value="{{salary}}">
                             </div>
                      <div class="col-md-12">
                      <h4>Dependants:</h4>
@@ -285,7 +311,7 @@
                         </form>
                      </div>
                   </div>
-                  <a href=""><button type="button"  class="btn btn-default btn-lg terminate-button" id="">SAVE</button></a>
+                  <button type="button"  class="btn btn-default btn-lg terminate-button"  id="saveedit">SAVE</button>
                   </form>
                   </div>
                   </div>

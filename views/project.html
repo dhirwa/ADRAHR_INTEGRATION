@@ -11,7 +11,7 @@
                <div class="adra-search">
                   <div id="custom-search-input">
                      <div class="input-group col-md-8">
-                        <input type="text" class="search-query form-control" placeholder="Search here" />
+                        <input type="text" class="search-query form-control" id="search" placeholder="Search here" />
                         <span class="input-group-btn">
                         <button class=" btn btn-danger" type="button">
                         <span class=" glyphicon glyphicon-search"></span>
@@ -59,7 +59,7 @@
          <div class="row">
             <div class="container">
                <section id="project-listing" class="project-listing">
-                  <table class="table">
+                  <table class="table" id="tblData">
                      <thead>
                         <tr>
                            <th></th>
@@ -72,7 +72,7 @@
                      </thead>
                      <tbody>
                         <tr ng-repeat="item in allprojs">
-                           <td></td>
+                          <td></td>
                            <td>{{item.Projectname}}</td>
                            <td>{{item.start_date}}</td>
                            <td>{{item.duration}}</td>
@@ -114,15 +114,11 @@
                               <form>
                                  <div class="form-group">
                                     <label for="text">Project Title</label>
-                                    <input type="text" class="form-control" ng-model="title" placeholder="project title" id="">
+                                    <input type="text" class="form-control" ng-model="title" placeholder="project title" id="ptitle">
                                  </div>
                                  <div class="form-group">
                                     <label for="sel1">Donor</label>
-                                    <select class="form-control" ng-model="donor" id="sel1">
-                                       <option>1</option>
-                                       <option>2</option>
-                                       <option>3</option>
-                                       <option>4</option>
+                                    <select class="form-control" ng-model="donor" id="donors">
                                     </select>
                                  </div>
                               </form>
@@ -132,19 +128,19 @@
                            <div class="col-md-4">
                               <div class="form-group">
                                  <label for="email">Start date</label>
-                                 <input type="email" class="form-control budgeted" id="email" ng-model="start_date" placeholder="01/01/2017">
+                                 <input type="email" class="form-control budgeted" id="start" ng-model="start_date" placeholder="01/01/2017">
                               </div>
                            </div>
                            <div class="col-md-4">
                               <div class="form-group">
                                  <label for="email">Duration</label>
-                                 <input type="email" class="form-control budgeted" id="email" ng-model="duration" placeholder="2 ans">
+                                 <input type="email" class="form-control budgeted" id="duration" ng-model="duration" placeholder="years">
                               </div>
                            </div>
                            <div class="col-md-4">
                               <div class="form-group">
                                  <label for="email">Salaries budget</label>
-                                 <input type="email" class="form-control budgeted" id="email" ng-model="budgete" placeholder="10,000,0000$">
+                                 <input type="email" class="form-control budgeted" id="salaries" ng-model="budgete" placeholder="10,000$">
                               </div>
                            </div>
                         </div>
@@ -155,7 +151,7 @@
                                  <div class="row">
                                     <div class="col-sm-8 nopadding">
                                        <div class="form-group">
-                                          <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="locations" placeholder="Names">
+                                          <input type="text" class="form-control" id="plocation" name="Degree[]" value="" ng-model="locations" placeholder="location">
                                        </div>
                                     </div>
                                     <div class="col-sm-4 nopadding">
@@ -174,7 +170,10 @@
                               </div>
                            </div>
                         </div>
-                        <a href="project.html"><button type="submit" ng-click="addProject(title,start_date,duration,budgete,locations)" class="btn btn-success btn-add">ADD</button></a>
+                        <div style="display:None" id="projmessage">
+                          <p style="color:green">Project added!!</p>
+                        </div>
+                        <button type="submit" id="addproject" class="btn btn-success btn-add">ADD</button>
                      </div>
                      <!-- /.modal-content -->
                      <!-- /.modal-dialog -->
