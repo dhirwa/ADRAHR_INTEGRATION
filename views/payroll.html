@@ -7,7 +7,7 @@
                         <img src="assets/img/logo.png" class="adra-display">
                      </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-5">
                      <div class="adra-search">
                         <div id="custom-search-input">
                            <div class="input-group col-md-8">
@@ -21,36 +21,48 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-5">
+                  <div class="col-md-6">
+                    <div id="navbar">
+                     <div id="holder">
                      <div class="btn-employee">
-                        <a href="#/projects"><button type="button"  class="btn btn-default btn-lg employees-details1">PROJECTS</button></a>
-                        <a href="#/"><button type="button" class="btn btn-default btn-lg employees-details2" id="employee">EMPLOYEES</button></a>
-                        <a href="#/payroll"><button type="button" class="btn btn-default btn-lg employees-details1">PAYROLL</button></a>
+                       <ul>
+                        <li><a href="#/home"><img src="assets/img/home.svg"></a></li>
+                        <li><a href="#/projects" class="employees-details1" >PROJECTS</a></li>
+                        <li><a href="#/" class="employees-details1"  id="employee">EMPLOYEES</a></li>
+                        <li><a href="#/payroll" class="employees-details1" id="onlink">PAYROLL</a></li>
+                      </ul>
+                      </div>
+                      </div>
+                      </div>
                         <p class="employees-details user"><img src="assets/img/shape.svg">
                         <div class="dropdown employees-details">
-                           <span class="dropdown-toggle" type="text" data-toggle="dropdown"><span> My name</span>
+                           <span class="dropdown-toggle" type="text" data-toggle="dropdown"><span>{{userin}}</span>
                            <span class="caret"></span></span>
                            <ul class="dropdown-menu">
-                              <li><a href="#">Settings</a></li>
+                              <!-- <li><a href="#">Settings</a></li>
                               <li><a href="#">Help</a></li>
-                              <li><a href="#">Report a problem</a></li>
-                              <li><a href="#">Log out</a></li>
+                              <li><a href="#">Report a problem</a></li> -->
+                              <li><a href="#/">Log out</a></li>
                            </ul>
                         </div>
                         </p>
-                     </div>
+
                   </div>
                </div>
+               <br>
+               <br>
+               <br>
                <div class="container">
                   <div class="row">
-                     <div class="dropdown drop-employer">
+
+                     <!-- <div class="dropdown drop-employer">
                         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">sort by project
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu">
                            <li><a href="#/payroll">Project</a></li>
                            <li><a href="#/terminated">Terminated</a></li>
                         </ul>
-                     </div>
+                     </div> -->
                   </div>
                </div>
             </nav>
@@ -102,7 +114,7 @@
                         </tbody>
                      </table>
                      <div class="fa-icon">
-                        <button class="btn btn-lg btn-default btn-circle" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></button>
+                        <a href=""><button type="button"  class="btn btn-default btn-lg btn-report" id="project">Generate Report</button></a>
                      </div>
                      <div class="text-center">
                         <div class="pagination">

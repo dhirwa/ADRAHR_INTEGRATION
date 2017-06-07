@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-controller="profileCtrl">
+<div class="container-fluid" ng-controller="profiletermCtrl">
         <header>
             <nav>
                 <div class="row">
@@ -65,11 +65,8 @@
                         <span class="caret"></span></span>
                         <ul class="dropdown-menu">
                             <li><a href="#/profile">Profile</a></li>
-                            <li><a href="#/letter">Letter of employment</a></li>
-                            <li><a href="#/salary">Salary certificate</a></li>
-                            <!-- <li><a href="#/termination">Leaving certificate</a></li> -->
-                            <li><a href="#/pay">Pay slip</a></li>
-                            <!-- <li><a href="#/finalpay">Final pay slip</a></li> -->
+                            <li><a href="#/termination">Leaving certificate</a></li>
+                            <li><a href="#/finalpay">Final pay slip</a></li>
                         </ul>
                     </div>
                     </p>
@@ -83,7 +80,7 @@
                 <div class="profile-main-content" id="prof">
                     <div class="personnal-detail">
                         <p><span class="employee-name">D.O.B:</span><span class="employee-post">{{dob}}</span></p>
-                        <p><span class="employee-name">ID:</span><span class="employee-post"> {{id_number}}</span></p>
+                        <p><span class="employee-name">ID:</span><span class="employee-post"> {{nid}}</span></p>
                         <p><span class="employee-name">Tel:</span><span class="employee-name"> P:</span><span class="employee-post"> {{telephone}}</span><span class="employee-name"> W:</span><span class="employee-post">{{telephone2}}</span></p>
                         <p><span class="employee-name">Work Email:</span><span class="employee-post">{{email}}</span></p>
                         <p><span class="employee-name">Personal Email:</span><span class="employee-post">{{email2}}</span></p>
@@ -231,10 +228,10 @@
                  <p class="record">Record Added On : <span class="record-detail">September 11,2014 at 4:25 pm</span></p>
                </div>
 
-                    <div class="terminate-btn">
+                    <!-- <div class="terminate-btn">
                     <button type="button"  class="btn btn-default btn-lg terminate-button" data-toggle="modal" data-target="#myModal2" id="project">Terminate contract</button>
 
-                  </div>
+                  </div> -->
                   </div>
                   <!--Modal terminate contract-->
   <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">

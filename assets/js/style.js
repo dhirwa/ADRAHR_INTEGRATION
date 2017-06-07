@@ -1,3 +1,62 @@
+/*Date picker*/
+$(function() {
+  $('input[name="birthdate"]').daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true
+  },
+  function(start, end, label) {
+      var years = moment().diff(start, 'years');
+
+  });
+
+  $('input[name="birthdate-end"]').daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true
+  },
+  function(start, end, label) {
+      var years = moment().diff(start, 'years');
+
+  });
+
+  $('input[name="startdate"]').daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true
+  },
+  function(start, end, label) {
+      var years = moment().diff(start, 'years');
+
+  });
+
+  $('input[name="startdate2"]').daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true
+  },
+  function(start, end, label) {
+      var years = moment().diff(start, 'years');
+
+  });
+
+  $('input[name="startdate-leave1"]').daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true
+  },
+  function(start, end, label) {
+      var years = moment().diff(start, 'years');
+
+  });
+
+  $('input[name="startdate-leave2"]').daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true
+  },
+  function(start, end, label) {
+      var years = moment().diff(start, 'years');
+
+  });
+
+});
+
+
 $(document).ready(function(){
       $("#edit-profile").click(function(e){
          event.preventDefault();
@@ -16,12 +75,12 @@ $(document).ready(function(){
 });
 
 /*Hide and SHOW on Select form*/
-document.getElementById('test').addEventListener('change', function () {
-    var style = this.value == 2 ? 'block' : 'none';
-     var style2 = this.value == 1 ? 'block' : 'none';
-    document.getElementById('hidden_div2').style.display = style;
-      document.getElementById('hidden_div').style.display = style2;
-});
+ // document.getElementById('test').addEventListener('change', function () {
+ //     var style = this.value == 2 ? 'block' : 'none';
+ //      var style2 = this.value == 1 ? 'block' : 'none';
+ //     document.getElementById('hidden_div2').style.display = style;
+ //       document.getElementById('hidden_div').style.display = style2;
+ // });
 
 $(document).on('click', '#close-preview', function(){
     $('.image-preview').popover('hide');
@@ -362,6 +421,11 @@ jQuery(document).ready(function($) {
         window.location = $(this).data("href");
     });
 });
+
+
+
+
+
 
 // function fixedScrolled(e) {
 //        var evt = window.event || e;

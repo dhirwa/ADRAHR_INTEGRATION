@@ -113,6 +113,7 @@
     .employees-details{
       display: inline-block;
       /*margin-left: 15px;*/
+      margin-top: 8px;
     }
     .adra-search{
       margin-top: 20px;
@@ -141,13 +142,15 @@
     }
 
     .employees-details1{
+      border: solid 2px #4D8885;
       border-radius: 30px;
-      width: 110px;
-      height: 40px;
+     text-decoration: inherit;
       background-color: #fff;
       color:#4D8885 ;
       font-weight: bold;
         font-size: 13px;
+        padding: 10px 20px;
+
         /*margin-left: 10px;*/
     }
     .terminate-button{
@@ -540,4 +543,226 @@ h4{
     max-height: 750px;
     overflow: auto;
 
+}
+
+#navbar #holder ul{
+  list-style: none;
+}
+
+#navbar #holder ul li a{
+  text-decoration: none;
+  float: left;
+  margin-left: 3px;
+}
+#navbar #holder ul li a:hover{
+  background-color: #4D8885 ;
+  color: #fff;
+}
+#holder ul li a#onlink{
+  background-color: #4D8885 ;
+  color: #fff;
+}
+
+/*New change*/
+.footer-contain {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.logo-img{
+  margin: 0 auto;
+}
+
+#navbar2 #holder2 ul {
+  list-style: none;
+}
+
+#navbar2 #holder2 ul li a{
+  text-decoration: none;
+  float: left;
+  margin-left: 10px;
+}
+#navbar2 #holder2 ul li a:hover{
+  background-color: #4D8885;
+  color: #fff;
+}
+#holder2 ul li a#onlink{
+  background-color: #4D8885;
+  color: #fff;
+}
+
+.bg-01 {
+      background-color: #e0e0e0;
+      color: #ffffff;
+      padding-top: 30px;
+      padding-bottom: 40px;
+  }
+
+.style1{
+  color:  #4D8885;
+    font: 63px "greatests";
+}
+.style2{
+  color:  #4D8885;
+    font: 23px "greatests";
+}
+
+
+@font-face {
+    font-family: greatests;
+    src: url('../font/roboto/Roboto-Light.ttf');
+}
+
+.btn-report{
+  border-radius: 30px;
+  width: 150px;
+  height: 40px;
+  background-color: #4D8885;
+  color:#fff ;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 25px;
+  float: right;
+   position: fixed; bottom: 60px; right: 60px;
+
+}
+.download-files1{
+  background-color: #e0e0e0;
+  padding: 10px;
+}
+
+.remove-attachment{
+  float: right;
+  color: #9e9e9e;
+  font-size: 12px;
+}
+.record{
+  color: #757575;
+}
+.record-detail{
+  font-weight: bold;
+  color: #424242;
+}
+.registration2{
+  background-color: #ffcdd2;
+  color: #c62828;
+  font-weight: bold;
+  border: 1px solid #e57373;
+  padding: 15px;
+}
+
+.btn-terminate{
+  border-radius: 30px;
+  width: 105px;
+  height: 40px;
+  color: #fff;
+  font-size: 12px;
+  background-color:#e53935;
+  border: 1px solid #f44336;
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
+.approve{
+  font-size: 20px;
+  color: #757575;
+  font-weight: bold;
+}
+
+.registration3{
+  background-color: #E4FBF9;
+  color: #727272;
+  border: 1px solid #4D8885;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.setting-profile{
+  border-radius: 30px;
+  width: 105px;
+  height: 40px;
+  color: #fff;
+  font-size: 12px;
+
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 40%;
+    left: 17px;
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: center;
+    background: #222222;
+    border: 3px solid #ffffff;
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
+    border-radius: 23px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.carousel-control .glyphicon-chevron-left{
+  font-size: 18px;
+  margin-left: -15px;
+}
+.carousel-control .glyphicon-chevron-right{
+  font-size: 18px;
+  margin-right: -15px;
+}
+.carousel-control.right {
+    right: 0px;
+    left: auto;
+}
+.carousel-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    background: #333333;
+    background: rgba(0, 0, 0, 0.75);
+}
+.carousel-caption p {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 700px){
+     .carousel-caption p {
+        font-size: 13px;
+    }
+    .carousel-caption {
+    background: rgba(0, 0, 0, 0.55);
+    }
+    .carousel-control {
+        top: 20%;
+    }
+}
+
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color:#bdbdbd ;
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);
+}
+.carousel-indicators .active {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    background-color: #4D8885 ;
 }

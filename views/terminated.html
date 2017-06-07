@@ -22,10 +22,17 @@
                      </div>
                   </div>
                   <div class="col-md-5">
+                    <div id="navbar">
+                     <div id="holder">
                      <div class="btn-employee">
-                       <a href="#/projects"><button type="button"  class="btn btn-default btn-lg employees-details1">PROJECTS</button></a>
-                       <a href="#/"><button type="button" class="btn btn-default btn-lg employees-details2" id="employee">EMPLOYEES</button></a>
-                       <a href="#/payroll"><button type="button" class="btn btn-default btn-lg employees-details1">PAYROLL</button></a>
+                       <ul>
+                        <li><a href="#/projects" class="employees-details1" >PROJECTS</a></li>
+                        <li><a href="#/" class="employees-details1" id="onlink" id="employee">EMPLOYEES</a></li>
+                        <li><a href="#/payroll" class="employees-details1">PAYROLL</a></li>
+                      </ul>
+                      </div>
+                      </div>
+                      </div>
                         <p class="employees-details user"><img src="assets/img/shape.svg">
                         <div class="dropdown employees-details">
                            <span class="dropdown-toggle" type="text" data-toggle="dropdown"><span> My name</span>
@@ -38,17 +45,17 @@
                            </ul>
                         </div>
                         </p>
-                     </div>
+
                   </div>
                </div>
                <div class="container">
                   <div class="row">
                      <div class="dropdown drop-employer">
-                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">sort by project
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">sort by:
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-                          <li><a href="#/payroll">Project</a></li>
-                          <li><a href="#/terminated">Terminated</a></li>
+                          <!-- <li><a href="#/">Project</a></li> -->
+                          <li><a href="#/">Active</a></li>
                         </ul>
                      </div>
                   </div>
@@ -75,83 +82,18 @@
                               <td></td>
                               <td></td>
                            </tr>
-                           <tr class="name-one">
+                           <tr class="name-one" ng-repeat="item in alltermi" ng-click="onprofile(item.employeeid)" id="termclick">
                               <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>uwimana fidele</td>
-                              <td>urunuri program</td>
-                              <td>financier officer</td>
+                              <td>{{item.names}}</td>
+                              <td>{{item.end_date}}</td>
+                              <td>{{item.reason}}</td>
                            </tr>
-                           <tr class="name-one">
-                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>uwimana fidele</td>
-                              <td>urunuri program</td>
-                              <td>financier officer</td>
-                           </tr>
-                           <tr class="name-one">
-                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>uwimana fidele</td>
-                              <td>urunuri program</td>
-                              <td>financier officer</td>
-                           </tr>
-                           <tr class="name-one">
-                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>uwimana fidele</td>
-                              <td>urunuri program</td>
-                              <td>financier officer</td>
-                           </tr>
-                           <tr class="name-one">
-                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>uwimana fidele</td>
-                              <td>urunuri program</td>
-                              <td>financier officer</td>
-                           </tr>
-                           <tr class="name-one">
-                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>Nshimimana Dieu akunda</td>
-                              <td>Management development program</td>
-                              <td>Human ressource management</td>
-                           </tr>
-                           <tr class="name-one">
-                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>Nshimimana Dieu akunda</td>
-                              <td>Management development program</td>
-                              <td>Human ressource management</td>
-                           </tr>
-                           <tr class="name-one">
-                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>Nshimimana Dieu akunda</td>
-                              <td>Management development program</td>
-                              <td>Human ressource management</td>
-                           </tr>
-                           <tr class="name-one">
-                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>Nshimimana Dieu akunda</td>
-                              <td>Management development program</td>
-                              <td>Human ressource management</td>
-                           </tr>
-                           <tr class="name-one">
-                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>Nshimimana Dieu akunda</td>
-                              <td>Management development program</td>
-                              <td>Human ressource management</td>
-                           </tr>
-                           <tr class="name-one">
-                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>Nshimimana Dieu akunda</td>
-                              <td>Management development program</td>
-                              <td>Human ressource management</td>
-                           </tr>
-                           <tr class="name-one">
-                              <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                              <td>Nshimimana Dieu akunda</td>
-                              <td>Management development program</td>
-                              <td>Human ressource management</td>
-                           </tr>
+
                         </tbody>
                      </table>
-                     <div class="fa-icon">
+                     <!-- <div class="fa-icon">
                         <button class="btn btn-lg btn-default btn-circle" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i></button>
-                     </div>
+                     </div> -->
                      <div class="text-center">
                         <div class="pagination">
                            <a href="#">&laquo;</a>

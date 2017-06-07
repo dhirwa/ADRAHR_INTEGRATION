@@ -1,0 +1,100 @@
+<div ng-controller="homeCtrl">
+      <div class="container-fluid">
+         <header>
+            <nav>
+               <div class="row">
+                  <div class="col-md-1">
+                     <div class="adra-logo">
+                        <img src="assets/img/logo.png" class="adra-display">
+                     </div>
+                  </div>
+                  <div class="col-md-5">
+                     <div class="adra-search">
+                        <div id="custom-search-input">
+                           <div class="input-group col-md-8">
+                              <input type="text" class="search-query form-control" placeholder="Search here" />
+                              <span class="input-group-btn">
+                              <button class=" btn btn-danger" type="button">
+                              <span class="glyphicon glyphicon-search"></span>
+                              </button>
+                              </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div id="navbar2">
+                        <div id="holder2">
+                           <div class="btn-employee">
+                              <ul>
+                                 <li><a href="#/home"><img src="assets/img/home.svg"></a></li>
+                                 <li><a href="#/project" class="employees-details1">PROJECTS</a></li>
+                                 <li><a href="#/" class="employees-details1">EMPLOYEES</a></li>
+                                 <li><a href="#/payroll" class="employees-details1">PAYROLL</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <p class="employees-details user"><img src="assets/img/shape.svg">
+                     <div class="dropdown  employees-details">
+                        <span class="dropdown-toggle" type="text" data-toggle="dropdown"><span>{{userin}}</span>
+                        <span class="caret"></span></span>
+                        <ul class="dropdown-menu">
+                           <li><a href="#">Settings</a></li>
+                           <li><a href="#">Help</a></li>
+                           <li><a href="#">Report a problem</a></li>
+                           <li><a href="#">Log out</a></li>
+                        </ul>
+                     </div>
+                     </p>
+                  </div>
+               </div>
+            </nav>
+         </header>
+         <br>
+      </div>
+      <main>
+         <div class="container-fluid bg-01 text-center">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6">
+                     <span class="style1">{{empnumber}}</span><br>
+                     <span class="style2">Employees</span>
+                  </div>
+                  <div class="col-md-6">
+                     <span class="style1">{{projnumber}}</span><br>
+                     <span class="style2">Projects</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-4">
+                  <div id="myDiv" style="width: 480px; height: 380px;">
+                     <!-- Plotly chart will be drawn inside this DIV -->
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div id="myDiv2" style="width: 480px; height: 400px;">
+                     <!-- Plotly chart will be drawn inside this DIV -->
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div id="myDiv3" style="width: 480px; height: 380px;">
+                     <!-- Plotly chart will be drawn inside this DIV -->
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <!-- Plotly chart will be drawn inside this DIV -->
+               </div>
+               <div class="col-md-4">
+                  <!-- Plotly chart will be drawn inside this DIV -->
+               </div>
+               <div class="col-md-4">
+                  <!-- Plotly chart will be drawn inside this DIV -->
+               </div>
+            </div>
+         </div>
+      </main>
+      </div>

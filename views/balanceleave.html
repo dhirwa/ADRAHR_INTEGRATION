@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-controller="leaveCtrl">
+<div class="container-fluid" ng-controller="balanceCtrl">
       <header>
          <nav>
             <div class="row">
@@ -67,9 +67,9 @@
                                  <li><a href="#/profile">Profile</a></li>
                                  <li><a href="#/letter">Letter of employment</a></li>
                                  <li><a href="#/salary">Salary certificate</a></li>
-                                 <!-- <li><a href="#/termination">Leaving certificate</a></li> -->
+                                 <li><a href="#/termination">Leaving certificate</a></li>
                                  <li><a href="#/payslip">Pay slip</a></li>
-                                 <!-- <li><a href="#/finalpay">Final pay slip</a></li> -->
+                                 <li><a href="#/finalpay">Final pay slip</a></li>
                              </ul>
                          </div>
                          </p>
@@ -85,8 +85,8 @@
                            <p><span class="employee-name">D.O.B:</span><span class="employee-post">{{dob}}</span></p>
                            <p><span class="employee-name">ID:</span><span class="employee-post"> {{nid}}</span></p>
                            <p><span class="employee-name">Tel:</span><span class="employee-name"> P:</span><span class="employee-post"> {{telephone}}</span><span class="employee-name"> W:</span><span class="employee-post">{{telephone2}}</span></p>
-                           <p><span class="employee-name">Work Email:</span><span class="employee-post">{{email}}</span></p>
-                           <p><span class="employee-name">Personal Email:</span><span class="employee-post">{{email2}}</span></p>
+                           <p><span class="employee-name">Personal Email:</span><span class="employee-post">{{email}}</span></p>
+                           <p><span class="employee-name">Work Email:</span><span class="employee-post">{{email2}}</span></p>
                            <p><span class="employee-name">Education:</span><span class="employee-post">{{education}}</span></p>
                            <p><span class="employee-name">Address:</span><span class="employee-post">{{address}}</span></p>
                            <p><span class="employee-name">Project:</span><span class="employee-post">{{project}}</span></p>
@@ -118,9 +118,9 @@
                                      </tr>
                                  </tbody>
                              </table>
-                             <!-- <div class="fa-icon"> -->
+                             <div class="fa-icon">
                                  <!--ADD DATA IN TABLE-1-->
-                                 <!-- <div class="">
+                                 <div class="">
                                      <div class="row">
                                          <div class="col-sm-3 nopadding">
                                              <div class="form-group">
@@ -151,7 +151,7 @@
                                          <div class="clear"></div>
                                      </div>
                                  </div>
-                             </div> -->
+                             </div>
                              <br><br>
                          </div>
                          <div class="profile-table-2">
@@ -181,7 +181,7 @@
                                  </tbody>
                              </table>
                              <!--ADD DATA IN TABLE-2-->
-                             <!-- <div class="panel-body">
+                             <div class="panel-body">
                                  <div class="row">
                                      <div class="col-sm-3 nopadding">
                                          <div class="form-group">
@@ -211,7 +211,7 @@
                                      </div>
                                      <div class="clear"></div>
                                  </div>
-                             </div> -->
+                             </div>
                              <!-- <a href=""><button type="button"  class="btn btn-default btn-lg terminate-button" id="project">Terminate contract</button></a> -->
                          </div>
                      </div>
@@ -303,7 +303,7 @@
 
                    <div class="col-md-8 table-bg-color">
     <div class="btn-leave">
-       <a href="#/profile"><button type="button" class="btn btn-default btn-lg view-leave view-profile">View Profile</button></a>
+       <a href="profile.html"><button type="button" class="btn btn-default btn-lg view-leave view-profile">View Profile</button></a>
     </div>
     <section id="view-leaves" class="view-leaves">
 
@@ -313,66 +313,12 @@
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
-          <!-- <li data-target="#myCarousel" data-slide-to="2"></li> -->
+          <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-
           <div class="item active">
-            <div id="table-leave-default">
-             <table class="table">
-                <p><span class="employee-name">10 items:</span></p>
-                <thead>
-                  <tr class="table-header-style2">
-                     <th></th>
-                     <th>Type</th>
-                     <th>Start Date</th>
-                     <th>End Date</th>
-                     <th>Duration(D)</th>
-                     <th>Address</th>
-                     <th>Status</th>
-                  </tr>
-                </thead>
-                 <tbody>
-                    <tr>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-
-                   </tr>
-                  <tr class="active name-one" ng-repeat="item in leaves">
-                  <td><span class="glyphicon glyphicon-ok-sign"></span></td>
-                  <td>{{item.vac_type}}</td>
-                  <td>{{item.start_date}}</td>
-                  <td>{{item.end_date}}</td>
-                  <td>{{item.duration}}</td>
-                  <td>{{item.address}}</td>
-                  <td>{{item.status}}</td>
-
-                  </tr>
-                </tbody>
-             </table>
-             <div class="text-center">
-                <div class="pagination">
-                   <a href="#">&laquo;</a>
-                   <a href="#">1</a>
-                   <a class="#" href="#">2</a>
-                   <a href="#">3</a>
-                   <a href="#">4</a>
-                   <a href="#">5</a>
-                   <a href="#">6</a>
-                   <a href="#">&raquo;</a>
-                </div>
-             </div>
-           </div>
-          </div>
-
-          <div class="item">
             <!--table leave on hover-->
              <div id="table-leave-on-switch">
               <table class="table">
@@ -532,16 +478,144 @@
               </div>
             </div>
           </div>
+          <div class="item">
+            <div id="table-leave-default">
+             <table class="table">
+                <p><span class="employee-name">10 items:</span></p>
+                <thead>
+                   <tr class="table-header-style2">
+                      <th></th>
+                      <th>Type</th>
+                      <th>Reason</th>
+                      <th>Start Date</th>
+                      <th>Duration(Days)</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr class="active name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="active name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="active name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="active name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="active name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="active name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                   <tr class="active name-one">
+                      <td><span class="glyphicon glyphicon-ok-sign"></span></td>
+                      <td>lil tunechi</td>
+                      <td>project manager</td>
+                      <td>09 april 1994</td>
+                      <td>09 april 1994</td>
+                   </tr>
+                </tbody>
+             </table>
+             <div class="text-center">
+                <div class="pagination">
+                   <a href="#">&laquo;</a>
+                   <a href="#">1</a>
+                   <a class="#" href="#">2</a>
+                   <a href="#">3</a>
+                   <a href="#">4</a>
+                   <a href="#">5</a>
+                   <a href="#">6</a>
+                   <a href="#">&raquo;</a>
+                </div>
+             </div>
+           </div>
+          </div>
+
         </div>
         <!-- Left and right controls -->
-        <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left"></span>
           <span class="sr-only">Previous</span>
         </a>
         <a class="right carousel-control" href="#myCarousel" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right"></span>
           <span class="sr-only">Next</span>
-        </a> -->
+        </a>
       </div>
       <div class="fa-icon">
          <button class="btn btn-lg btn-default btn-circle" data-toggle="modal" data-target="#myModal3"><i class="fa fa-plus"></i></button>
@@ -553,116 +627,76 @@
          </section>
          <!--MODAL-LEAVE-->
          <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-           <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                 <div class="modal-header ">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div class="header-modal">
-                       <h4 class="modal-title registration" id="gridSystemModalLabel">Leave entry</h4>
-                    </div>
-                 </div>
-                 <div class="modal-body">
-                    <div class="row">
-                       <div class="col-md-4">
-                          <form>
-                             <div class="form-group">
-                                <label for="sel1">Leave type</label>
-                                <select class="form-control" id="leave_type">
-                                   <option hidden>Select</option>
-                                   <option value="1">Annual leave</option>
-                                   <option value="2">Sick Leave</option>
-                                   <option value="3">Maternity Leave</option>
-                                   <option value="4">Compensatory Time-off</option>
-                                   <option value="5">Leave Without pay</option>
-                                   <option value="6">Others</option>
-                                </select>
-                             </div>
-                          </form>
-                       </div>
-                       <div class="col-md-6">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header ">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <div class="header-modal">
+                        <h4 class="modal-title registration" id="gridSystemModalLabel">Leave entry</h4>
+                     </div>
+                  </div>
+                  <div class="modal-body">
+                     <div class="row">
+                        <div class="col-md-4">
+                           <form>
+                              <div class="form-group">
+                                 <label for="sel1">Leave Type</label>
+                                 <select class="form-control" ng-model="leave_type" id="leave_type">
+                                    <option hidden>Select</option>
+                                    <option value="1">Work leave</option>
+                                    <option value="2">Other leaves</option>
+                                 </select>
+                              </div>
+                           </form>
+                        </div>
+                        <div class="col-md-6">
                            <form class="leave-entry-style">
                               <div class="form-group" id="hidden_div2" style="display: none;">
-                                 <label for="email">Specify</label>
+                                 <label for="email">Other reason</label>
                                  <input type="text" class="form-control budgeted" ng-model="reason" id="reason" placeholder="type here">
                               </div>
-                              <div id="hidden_div" style="display: none;color:rgb(34,139,34)" class="remaining-style">
-                              <p>Annual leave remaining days: {{remains}}</p>
-                              <!-- <div>
+                              <div id="hidden_div" style="display: none;" class="remaining-style">
+                              <p>work leave remaining days: {{remains}}</p>
+                              <div>
                                  <label for="email">Reason</label>
                                  <input type="text" class="form-control budgeted" ng-model="reason" id="reason" placeholder="type here">
-                              </div> -->
+                              </div>
                             </div>
-                            <div id="hidden_div3" style="display: none;color:rgb(250,128,114)" class="remaining-style">
-                            <p>The Annual leave days have been exhausted!!</p>
+                            <div id="hidden_div3" style="display: none;" class="remaining-style">
+                            <p>The days have been exhausted for this person!!</p>
                            </div>
                            </form>
-                      </div>
-                    </div>
-                    <div class="row">
-                       <div class="col-md-4">
-                          <form>
-                             <div class="form-group">
-                                <label for="text">Start date</label>
-                                <input type="text" name="startdate-leave1" class="form-control"  id="start_date" value="yyyy-mm-dd">
-                             </div>
-                          </form>
-                       </div>
-                       <div class="col-md-4">
-                          <form>
-                             <div class="form-group">
-                                <label for="text">End date</label>
-                                <input type="text" name="startdate-leave2" class="form-control" id="end_date" value="yyyy-mm-dd">
-                             </div>
-                          </form>
-                       </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-8">
-                         <form>
-                            <div class="form-group">
-                               <label for="text">Adresse while on leave</label>
-                               <input type="text" class="form-control" placeholder="Id_number" id="addr_leave">
-                            </div>
-                         </form>
-                      </div>
-                    </div>
-                       <p class="approve">Approvals</p>
-                    <div class="row">
-                    <div class="col-md-4">
-                       <form>
-                          <div class="form-group">
-                             <label for="text">Position</label>
-                             <input type="text" class="form-control" placeholder="text...." id="leave_pos">
-                          </div>
-                       </form>
-                    </div>
-                    <div class="col-md-4">
-                       <form>
-                          <div class="form-group">
-                             <label for="text">Name</label>
-                             <input type="text" class="form-control" placeholder="text...." id="leave_name">
-                          </div>
-                       </form>
-                    </div>
-                    <div class="col-md-4">
-                       <form>
-                          <div class="form-group">
-                             <label for="text">Email</label>
-                             <input type="email" class="form-control" placeholder="text...." id="leave_email">
-                          </div>
-                       </form>
-                    </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-4">
+                           <form>
+                              <div class="form-group">
+                                 <label for="text">Start date</label>
+                                 <input type="text" class="form-control budgeted" ng-model="start_date" id="start_date" placeholder="01/01/2017">
+                              </div>
+                           </form>
+                        </div>
+                        <div class="col-md-4">
+                           <form>
+                              <div class="form-group">
+                                 <label for="text">End date</label>
+                                 <input type="text" class="form-control budgeted" ng-model="end_date" id="end_date" placeholder="01/01/2017">
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                     <div style="display:None" id="message">
+                       <p style="color:green">Leave added!!</p>
+                     </div>
+                     <button type="submit" id="addleave" class="btn btn-success btn-add">ADD</button>
+
                   </div>
-                  <div style="display:None" id="message">
-                     <p style="color:green">Leave added!!</p>
-                   </div>
-                    <button type="submit" id="addleave" class="btn btn-success btn-add" id="">ADD</button>
-                 </div>
-                 <!-- /.modal-content -->
-                 <!-- /.modal-dialog -->
-              </div>
-              <!-- /.modal -->
-           </div>
-        </div>
+                  <!-- /.modal-content -->
+                  <!-- /.modal-dialog -->
+               </div>
+               <!-- /.modal -->
+            </div>
+         </div>
       </main>
     </div>

@@ -17,8 +17,8 @@
                      <div class="form-group">
                         <input type="password" class="form-control form-control-no-border form-style" ng-model="password" placeholder="Password" required>
                      </div>
-                     <div class="form-group">
-                      <p class="text-center" ng-show="message">Failed to sign up</p>
+                     <div class="form-group" style="display:none" id="failure">
+                      <p class="text-center">Failed to sign up</p>
                    </div>
                      <p class="forgot-password">have an account? <a href="#/signin"><span class="forgot-password_">Sign in</a></p>
                      <a href=""><button type="button" class="btn btn-default btn-lg btn-sign-up" ng-click="signnup(names,email,password)">Create account</button></a>

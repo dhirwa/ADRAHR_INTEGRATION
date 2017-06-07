@@ -7,7 +7,7 @@
                         <img src="assets/img/logo.png" class="adra-display">
                      </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-5">
                      <div class="adra-search">
                         <div id="custom-search-input">
                            <div class="input-group col-md-8">
@@ -21,34 +21,42 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-5">
+                  <div class="col-md-6">
+                    <div id="navbar">
+                     <div id="holder">
                      <div class="btn-employee">
-                        <a href="#/projects"><button type="button"  class="btn btn-default btn-lg employees-details1">PROJECTS</button></a>
-                        <a href="#/"><button type="button" class="btn btn-default btn-lg employees-details2" id="employee">EMPLOYEES</button></a>
-                        <a href="#/payroll"><button type="button" class="btn btn-default btn-lg employees-details1">PAYROLL</button></a>
+                       <ul>
+                        <li><a href="#/home"><img src="assets/img/home.svg"></a></li>
+                        <li><a href="#/projects" class="employees-details1">PROJECTS</a></li>
+                        <li><a href="#/" class="employees-details1" id="onlink" id="employee">EMPLOYEES</a></li>
+                        <li><a href="#/payroll" class="employees-details1">PAYROLL</a></li>
+                      </ul>
+                      </div>
+                      </div>
+                      </div>
+
                         <p class="employees-details user"><img src="assets/img/shape.svg">
                         <div class="dropdown employees-details">
-                           <span class="dropdown-toggle" type="text" data-toggle="dropdown"><span> My name</span>
+                           <span class="dropdown-toggle" type="text" data-toggle="dropdown"><span>{{userin}}</span>
                            <span class="caret"></span></span>
                            <ul class="dropdown-menu">
-                              <li><a href="#">Settings</a></li>
+                              <li><a href="" data-toggle="modal" data-target="#myModal5">Settings</a></li>
                               <li><a href="#">Help</a></li>
                               <li><a href="#">Report a problem</a></li>
-                              <li><a href="#">Log out</a></li>
+                              <li><a href="#/">Log out</a></li>
                            </ul>
                         </div>
                         </p>
-                     </div>
-                  </div>
+                    </div>
                </div>
                <div class="container">
                   <div class="row">
                      <div class="dropdown drop-employer">
-                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">sort by project
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">sort by:
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-                           <li><a href="project.html">Project</a></li>
-                           <li><a href="terminated.html">Terminated</a></li>
+                           <!-- <li><a href="#/">Project</a></li> -->
+                           <li><a href="#/terminated">Terminated</a></li>
                         </ul>
                      </div>
                   </div>
@@ -61,7 +69,7 @@
                   <div class="employee-list">
                      <table class="table" id="tblData">
                         <thead>
-                           <tr>
+                           <tr class="name-one">
                               <th></th>
                               <th>Employee Name</th>
                               <th>Project Name</th>
@@ -80,7 +88,7 @@
                      <div class="fa-icon">
                         <button class="btn btn-lg btn-default btn-circle" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"></i></button>
                      </div>
-                     <div class="text-center">
+                     <!-- <div class="text-center">
                         <div class="pagination">
                            <a href="#">&laquo;</a>
                            <a href="#">1</a>
@@ -91,14 +99,97 @@
                            <a href="#">6</a>
                            <a href="#">&raquo;</a>
                         </div>
-                     </div>
+                     </div> -->
                   </div>
                </div>
                <!--VIEW LEAVE-->
             </div>
+            <!--Modal settings-->
+      <div class="modal fade mymodal" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header ">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <div class="header-modal modal-terminate">
+                     <h4 class="modal-title registration3" id="gridSystemModalLabel">Profile settings</h4>
+                  </div>
+               </div>
+               <div class="modal-body">
+                  <!-- <div class="row">
+                    <div class="col-md-4">
+                       <form>
+                          <div class="form-group">
+                             <label for="text">First name</label>
+                             <input type="text" class="form-control" placeholder="text...." id="">
+                          </div>
+                       </form>
+                    </div>
+                    <div class="col-md-4">
+                       <form>
+                          <div class="form-group">
+                             <label for="text">Last name</label>
+                             <input type="text" class="form-control" placeholder="text...." id="">
+                          </div>
+                       </form>
+                    </div>
+                    <div class="col-md-4">
+                    <div class="form-group">
+                       <label for="sel1">Gender</label>
+                       <select class="form-control" id="sel1">
+                          <option hidden>Select</option>
+                          <option>Male</option>
+                          <option>female</option>
+                       </select>
+                    </div>
+                  </div>
+                  </div> -->
+                  <div class="row">
+                    <div class="col-md-6">
+                    <form>
+                       <div class="form-group">
+                          <label for="text">Email</label>
+                          <input type="text" class="form-control" placeholder="text...." id="chemail">
+                       </div>
+                    </form>
+                  </div>
+                  </div>
+                    <p class="approve">Change password</p>
+                    <div class="row">
+                      <div class="col-md-4">
+                         <form>
+                            <div class="form-group">
+                               <label for="text">Current password</label>
+                               <input type="password" class="form-control" placeholder="pwd..." id="currentpassword">
+                            </div>
+                         </form>
+                      </div>
+                      <div class="col-md-4">
+                         <form>
+                            <div class="form-group">
+                               <label for="text">New password</label>
+                               <input type="password" class="form-control showpassword" placeholder="pwd...." id="newpass">
+                            </div>
+                         </form>
+                      </div>
+                      <div class="col-md-4">
+                        <form>
+                           <div class="form-group">
+                              <label for="text">Confirm password</label>
+                              <input type="password" class="form-control showpassword" placeholder="pwd...." id="newpass">
+                           </div>
+                        </form>
+                    </div>
+                    </div>
+                  <button type="submit" class="btn btn-success setting-profile" id="submitchange">SUBMIT</button>
+               </div>
+               <!-- /.modal-content -->
+               <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+         </div>
       </div>
       <!--MODAL-EMPLOYEE-->
-      <div class="modal fade" id="myModal1" role="dialog" aria-labelledby="gridSystemModalLabel">
+      <div class="modal fade" id="myModal1"  role="dialog" aria-labelledby="gridSystemModalLabel">
      <div class="modal-dialog" role="document">
         <div class="modal-content">
            <div class="modal-header">
@@ -107,7 +198,7 @@
                  <h4 class="modal-title registration" id="gridSystemModalLabel">Employee Registration</h4>
               </div>
            </div>
-           <div class="modal-body" ng-controller>
+           <div class="modal-body">
               <section class="registration-show1">
                  <div class="row">
                     <div class="reigistration-1">
@@ -116,7 +207,7 @@
                              <form>
                                 <div class="form-group">
                                    <label>first name</label>
-                                   <input type="text" class="form-control" placeholder="first-name"  ng-model="first_name" id="first-name">
+                                   <input type="text" class="form-control" placeholder="first-name" id="first-name">
                                 </div>
                              </form>
                           </div>
@@ -124,7 +215,15 @@
                              <form>
                                 <div class="form-group">
                                    <label>last name</label>
-                                   <input type="text" class="form-control" placeholder="last name" ng-model="last_name" id="last-name">
+                                   <input type="text" class="form-control" placeholder="last name" id="last-name">
+                                </div>
+                             </form>
+                          </div>
+                          <div class="col-md-4">
+                             <form>
+                                <div class="form-group">
+                                   <label>National ID Number</label>
+                                   <input type="text" class="form-control" placeholder="last name" id="id_number">
                                 </div>
                              </form>
                           </div>
@@ -133,25 +232,30 @@
                     <div class="col-md-12">
                        <div class="col-md-4">
                           <form>
-                             <div class="form-group">
-                                <label>National id_Nber</label>
-                                <input type="text" class="form-control" placeholder="Id_number" ng-model="nid" id="id_number">
-                             </div>
+
+                               <div class="form-group">
+                                  <label for="email">Birth date</label>
+                                  <input type="text" name="startdate" class="form-control"  value="01/01/2017" id="birthdate">
+                               </div>
+
                           </form>
+                       </div>
+                       <div class="col-md-4">
+                         <div class="form-group">
+                            <label for="sel1">Gender</label>
+                            <select class="form-control" id="gender">
+                               <option hidden>Select</option>
+                               <option>Male</option>
+                               <option>female</option>
+                            </select>
+                         </div>
+                      </form>
                        </div>
                        <div class="col-md-4">
                           <form>
                              <div class="form-group">
-                                <label>Telephone</label>
-                                <input type="text" class="form-control" placeholder="telephone" ng-model="telephone" id="phone">
-                             </div>
-                          </form>
-                       </div>
-                       <div class="col-md-4">
-                          <form>
-                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" placeholder="email" ng-model="email" id="email">
+                                <label>Personal Phone</label>
+                                <input type="email" class="form-control" placeholder="+250....." id="phone">
                              </div>
                           </form>
                        </div>
@@ -160,46 +264,60 @@
                        <div class="col-md-4">
                           <form>
                              <div class="form-group">
-                               <label>Date of Birth</label>
-                               <input type="text" class="form-control" placeholder="yyyy-mm-dd" ng-model="email" id="birthdate">
+                                <label>Work Phone</label>
+                                <input type="text" class="form-control" placeholder="+250....." id="phone2">
                              </div>
                           </form>
                        </div>
-                       <!-- <div class="col-md-3">
-                          <form>
-                             <div class="form-group">
-                                <label class="day-style">day</label>
-                                <input type="text" class="form-control" placeholder="day" ng-model="day" id="">
-                             </div>
-                          </form>
-                       </div>
-                       <div class="col-md-3">
-                          <form>
-                             <div class="form-group">
-                                <label class="day-style">Email</label>
-                                <input type="email" class="form-control" placeholder="year" ng-model="year" id="">
-                             </div>
-                          </form>
-                       </div> -->
                        <div class="col-md-4">
                           <form>
                              <div class="form-group">
-                                <label for="sel1">Gender</label>
-                                <select class="form-control" ng-model="gender" id="gender">
-                                   <option hidden>Select</option>
-                                   <option value="M">Male</option>
-                                   <option value="F">Female</option>
-                                </select>
+                                <label>Work Email</label>
+                                <input type="text" class="form-control" placeholder="email" id="email">
                              </div>
+                          </form>
+                       </div>
+
+                       <div class="col-md-4">
+                          <form>
+                            <div class="form-group">
+                               <label>Personal Email</label>
+                               <input type="text" class="form-control" placeholder="email" id="email2">
+                            </div>
                           </form>
                        </div>
                     </div>
                     <div class="col-md-12">
+                       <div class="col-md-4">
+                          <form>
+                            <div class="form-group">
+                               <label for="sel1">Hobby</label>
+                               <select class="form-control" id="hobby">
+                                  <option hidden>Select</option>
+                                  <option>Reading</option>
+                                  <option>Writing/blogging</option>
+                                  <option>Jogging/walking</option>
+                                  <option>Yoga</option>
+                                  <option>Team sports: volleyball, bowling, soccer</option>
+                                  <option>Dinner or Movie club</option>
+                                  <option>Ballroom dancing</option>
+                                  <option>Drawing/painting/photography</option>
+                                  <option>Cooking/baking</option>
+                                  <option>Knitting</option>
+                                  <option>Quilting</option>
+                                  <option>Antiques</option>
+                                  <option>Decor</option>
+                                  <option>Biking</option>
+                                  <option>Dancing</option>
+                               </select>
+                            </div>
+                          </form>
+                       </div>
                        <div class="col-md-4">
                           <form>
                              <div class="form-group">
                                 <label>Education</label>
-                                <input type="text" class="form-control" placeholder="education" ng-model="education" id="education">
+                                <input type="text" class="form-control" placeholder="education.." id="education">
                              </div>
                           </form>
                        </div>
@@ -207,80 +325,82 @@
                           <form>
                              <div class="form-group">
                                 <label>Home Addresse</label>
-                                <input type="text" class="form-control" placeholder="addresse" ng-model="address" id="address">
+                                <input type="text" class="form-control" placeholder="addresse" id="address">
                              </div>
                           </form>
                        </div>
                     </div>
                     <div class="col-md-12">
-                       <div class="panel-body">
-                          <span>Emergency Contact</span>
-                          <div class="row">
-                             <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                   <input type="text" class="form-control" ng-model="emer.names" id="emernames" name="Schoolname[]" value="" placeholder="Name">
-                                </div>
-                             </div>
-                             <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                   <input type="text" class="form-control" id="emerrelation" name="Major[]" ng-model="emer.relation" value="" placeholder="relation">
-                                </div>
-                             </div>
-                             <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                   <input type="text" class="form-control" id="emernumber" name="Degree[]" value="" ng-model="emer.number" placeholder="Phone-nber">
-                                </div>
-                             </div>
-                             <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                   <div class="input-group">
-                                      <div class="input-group-btn">
-                                         <button class="btn btn-default btn-plus" type="button"  onclick="education_fields();"><i class="fa fa-plus"></i></button>
-                                      </div>
-                                   </div>
-                                </div>
-                             </div>
-                             <div id="education_fields">
-                             </div>
-                             <div class="clear"></div>
-                          </div>
-                       </div>
-                    </div>
-                    <div class="col-md-12">
-                       <div class="panel-body">
-                          <span>Dependents</span>
-                          <div class="row">
-                             <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                   <input type="text" class="form-control" id="depnames" name="Schoolname[]"  ng-model="dep.names" value="" placeholder="Name">
-                                </div>
-                             </div>
-                             <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                   <input type="text" class="form-control" id="deprelation" name="Major[]" value="" ng-model="dep.relation" placeholder="relation">
-                                </div>
-                             </div>
-                             <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                   <input type="text" class="form-control" id="depdob" name="Degree[]" value="" ng-model="dep.birthdate" placeholder="birthdate">
-                                </div>
-                             </div>
-                             <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                   <div class="input-group">
-                                      <div class="input-group-btn">
-                                         <button class="btn btn-default btn-plus" type="button"  onclick="education_fields2();"><i class="fa fa-plus"></i></button>
-                                      </div>
-                                   </div>
-                                </div>
-                             </div>
-                             <div id="education_fields2">
-                             </div>
-                             <div class="clear"></div>
-                          </div>
-                       </div>
-                       <button type="submit" class="btn btn-success btn-add" id="next">NEXT</button>
-                    </div>
+                     <div class="panel-body">
+                        <span>Emergency Contact</span>
+                        <form id="dependencies">
+                        <div class="row user">
+                           <div class="col-sm-3 nopadding">
+                              <div class="form-group">
+                                 <input type="text" class="form-control" id="name" placeholder="Name">
+                              </div>
+                           </div>
+                           <div class="col-sm-3 nopadding">
+                              <div class="form-group">
+                                 <input type="text" class="form-control" id="relation" placeholder="relation">
+                              </div>
+                           </div>
+                           <div class="col-sm-3 nopadding">
+                              <div class="form-group">
+                                 <input type="text" class="form-control" id="phone" placeholder="phone">
+                              </div>
+                           </div>
+                           <div class="col-sm-3 nopadding">
+                              <div class="form-group">
+                                 <div class="input-group">
+                                    <div class="input-group-btn">
+                                       <button class="btn btn-default btn-plus add" type="button" id="add"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                          <div class="clear"></div>
+                        </div>
+                      </form>
+                      <!-- <button type="button" id="save">Save</button> -->
+                     </div>
+                  </div>
+                  <div class="col-md-12">
+                     <div class="panel-body">
+                        <span>Dependents</span>
+                        <form id="contacts">
+                        <div class="row user2">
+                           <div class="col-sm-3 nopadding">
+                              <div class="form-group">
+                                 <input type="text" class="form-control" id="depname" placeholder="Name">
+                              </div>
+                           </div>
+                           <div class="col-sm-3 nopadding">
+                              <div class="form-group">
+                                 <input type="text" class="form-control" id="deprelation" placeholder="relation">
+                              </div>
+                           </div>
+                           <div class="col-sm-3 nopadding">
+                              <div class="form-group">
+                                 <input type="text" class="form-control" id="depdob" placeholder="birthdate">
+                              </div>
+                           </div>
+                           <div class="col-sm-3 nopadding">
+                              <div class="form-group">
+                                 <div class="input-group">
+                                    <div class="input-group-btn">
+                                       <button class="btn btn-default btn-plus adddep" type="button" id="adddep"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="clear"></div>
+                        </div>
+                        </form>
+                     </div>
+                     <!-- <button type="button" id="savedep">Save</button> -->
+                     <button type="submit" class="btn btn-success btn-add" id="next">NEXT</button>
+                  </div>
                  </div>
               </section>
               <section class="registration-show2">
@@ -289,8 +409,8 @@
                        <form>
                           <div class="form-group">
                              <label for="sel1">Project Title</label>
-                             <select class="form-control" ng-model="project_title" id="empproj">
-                              </select>
+                             <select class="form-control" id="empproj">
+                             </select>
                           </div>
                           <div class="form-group">
                              <label for="sel1">position</label>
@@ -300,16 +420,15 @@
                     </div>
                     <div class="row">
                       <div class="col-md-4">
-                         <div class="form-group">
-                            <label for="email">Start Date</label>
-                            <input type="text" class="form-control" ng-model="startd" id="startd" placeholder="yyyy-mm-dd">
-                         </div>
-                      </div>
-
+                       <div class="form-group">
+                          <label for="email">Start Date</label>
+                          <input type="text" class="form-control" ng-model="startd" id="startd" placeholder="yyyy-mm-dd">
+                       </div>
+                    </div>
                        <div class="col-md-4">
                           <div class="form-group">
                              <label for="email">Budgeted pay</label>
-                             <input type="text" class="form-control budgeted" ng-model="salary" id="salary" placeholder="salary">
+                             <input type="email" class="form-control budgeted" id="salary" placeholder="3500 USD">
                           </div>
                        </div>
                        <div class="col-md-4">
@@ -331,10 +450,10 @@
                              <span class="glyphicon glyphicon-remove"></span> Clear
                              </button>
                              <!-- image-preview-input -->
-                             <div class="btn btn-default image-preview-input">
+                             <div class="btn btn-default image-preview-input" id="upl">
                                 <img src="assets/img/attachment.png">
                                 <span class="image-preview-input-title"></span>
-                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                <input type="file" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf" name="input-file-preview" file-model="myFile"/> <!-- rename it -->
                              </div>
                           </span>
                        </div>
@@ -353,7 +472,7 @@
                              <div class="btn btn-default image-preview-input2">
                                 <img src="assets/img/attachment.png">
                                 <span class="image-preview-input-title2"></span>
-                                <input type="file"  accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                <input type="file"  accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf" file-model="myFile_1" name="input-file-preview"/> <!-- rename it -->
                              </div>
                           </span>
                        </div>
@@ -362,7 +481,7 @@
                     <div class="col-md-12">
                        <!-- image-preview-filename input [CUT FROM HERE]-->
                        <div class="input-group image-preview3">
-                          <input type="text" class="form-control image-preview-filename3" placeholder="National ID" ng-model=nationalId"" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                          <input type="text" class="form-control image-preview-filename3" placeholder="National ID" ng-model="nationalId" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
                           <span class="input-group-btn">
                              <!-- image-preview-clear button -->
                              <button type="button" class="btn btn-default image-preview-clear3" style="display:none;">
@@ -373,7 +492,27 @@
                                 <!-- <span class="glyphicon glyphicon-folder-open"></span> -->
                                 <img src="assets/img/attachment.png">
                                 <span class="image-preview-input-title3"></span>
-                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                <input type="file" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf" file-model="myFile_2" name="input-file-preview"/> <!-- rename it -->
+                             </div>
+                          </span>
+                       </div>
+                       <!-- /input-group image-preview [TO HERE]-->
+                    </div>
+                    <div class="col-md-12">
+                       <!-- image-preview-filename input [CUT FROM HERE]-->
+                       <div class="input-group image-preview3">
+                          <input type="text" class="form-control image-preview-filename3" placeholder="Profile Picture" ng-model="pp" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                          <span class="input-group-btn">
+                             <!-- image-preview-clear button -->
+                             <button type="button" class="btn btn-default image-preview-clear3" style="display:none;">
+                             <span class="glyphicon glyphicon-remove"></span> Clear
+                             </button>
+                             <!-- image-preview-input -->
+                             <div class="btn btn-default image-preview-input3">
+                                <!-- <span class="glyphicon glyphicon-folder-open"></span> -->
+                                <img src="assets/img/attachment.png">
+                                <span class="image-preview-input-title3"></span>
+                                <input type="file" accept="image/*" file-model="myFile_3" name="input-file-preview"/> <!-- rename it -->
                              </div>
                           </span>
                        </div>
@@ -382,7 +521,7 @@
                     <div style="display:None" id="empmessage">
                       <p style="color:green">Employee added!!</p>
                     </div>
-                    <button type="submit"  id="addEmp" class="btn btn-success btn-add">ADD</button>
+                    <button  id="addEmp" ng-click="addEmp(myFile,myFile_1,myFile_2)" class="btn btn-success btn-add">ADD</button>
                     <button type="submit" class="btn btn-success btn-add" id="back">BACK</button>
                  </div>
                  <!-- /.modal-content -->
@@ -391,8 +530,8 @@
            </div>
            <!-- /.modal -->
         </div>
-     </div>
-  </div>
+        </div>
+      </div>
       <!--MODAL-LEAVE-->
       <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
    <div class="modal-dialog" role="document">
@@ -455,6 +594,5 @@
 </div>
       <!--MODAL-PROJECT-->
       </main>
-      <footer>
-      </footer>
+
       </div>
