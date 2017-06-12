@@ -56,7 +56,7 @@
             <div class="row">
             <div class="col-md-4 well">
                 <div class="employees-details">
-                    <img src="assets/img/profile.svg" class="profile-img">
+                    <img src="{{picture}}" class="profile-img">
                 </div>
                 <div class="employees-details">
                     <p>
@@ -83,7 +83,7 @@
                 <div class="profile-main-content" id="prof">
                     <div class="personnal-detail">
                         <p><span class="employee-name">D.O.B:</span><span class="employee-post">{{dob}}</span></p>
-                        <p><span class="employee-name">ID:</span><span class="employee-post"> {{id_number}}</span></p>
+                        <p><span class="employee-name">ID:</span><span class="employee-post"> {{nid}}</span></p>
                         <p><span class="employee-name">Tel:</span><span class="employee-name"> P:</span><span class="employee-post"> {{telephone}}</span><span class="employee-name"> W:</span><span class="employee-post">{{telephone2}}</span></p>
                         <p><span class="employee-name">Work Email:</span><span class="employee-post">{{email}}</span></p>
                         <p><span class="employee-name">Personal Email:</span><span class="employee-post">{{email2}}</span></p>
@@ -281,7 +281,7 @@
                  </div>
               </div>
 
-              <button type="submit" class="btn btn-success btn-terminate" id="yesterminate">TERMINATE</button>
+              <button type="submit" class="btn btn-success btn-terminate" id=>TERMINATE</button>
               </div>
            <!-- /.modal-content -->
            <!-- /.modal-dialog -->
@@ -290,7 +290,10 @@
                 </div>
               </div>
                 <div class="edit-profile-form" id="editp">
-                    <form>
+                  <p class="details-style2" id="personal-details">Personal Details</p>
+                  <p class="details-style2 right-text" id="professional-details">Professional Details</p>
+                    <div class="personal-details">
+                      <div class="personal-details-hide">
                       <div class="form-group">
                           <label for="text">First name:</label>
                           <input type="text" class="form-control" placeholder="first name" value="{{first}}" id="first2">
@@ -299,7 +302,7 @@
                           <label for="text">Last name:</label>
                           <input type="text" class="form-control" placeholder="last" value="{{last}}" id="last2">
                       </div>
-                        <div class="form-group">
+
                             <!-- <label>D.O.B</label>
                             <input type="date" class="form-control" id="exampleInputDOB1" ng-model="dob2" placeholder="Date of Birth">
                             <div class="form-group">
@@ -312,6 +315,11 @@
                                 <input type="text" class="form-control" placeholder="Personnal-tel" id="tel2" value="{{telephone2}}">
                             </div>
                             <div class="form-group">
+                                <label for="text">Email:</label>
+                                <input type="text" class="form-control" placeholder="Work-tel" id="email11" value="{{email}}"><br>
+                                <input type="text" class="form-control" placeholder="Personnal-tel" id="email12" value="{{email2}}">
+                            </div>
+                            <div class="form-group">
                                 <label for="text">Education:</label>
                                 <input type="text" class="form-control" placeholder="education" id="educ2" value="{{education}}">
                             </div>
@@ -319,6 +327,9 @@
                                 <label for="text">Address:</label>
                                 <input type="text" class="form-control" placeholder="address" id="address2" value="{{address}}">
                             </div>
+                            <button type="button"  class="btn btn-default btn-lg terminate-button" id="saveedit">SAVE</button>
+                          </div>
+                            <div class="professional-details">
                             <div class="form-group">
                                 <label for="text">Project:</label>
                                 <input type="text" class="form-control" placeholder="project" id="projid" value="{{project}}">
@@ -397,10 +408,10 @@
                         </form>
                      </div>
                   </div> -->
-                  <button type="button"  class="btn btn-default btn-lg terminate-button"  id="saveedit">SAVE</button>
-                  </form>
+                  <button type="button"  class="btn btn-default btn-lg terminate-button"  id="saveedit2">SAVE</button>
                   </div>
-                  </div>
+                </div>
+                </div>
               </div>
             <div class="col-md-8 table-bg-color">
             <div class="btn-leave">

@@ -799,6 +799,7 @@ myapp.controller('profileCtrl', ['$scope', '$http','$location','$rootScope', fun
                     $scope.cv = data.Employee[0].cv;
                     $scope.nid = data.Employee[0].nid;
                     $scope.contract = data.Employee[0].contract;
+                    $scope.picture = data.Employee[0].picture;
                     });
                   }
 
@@ -869,24 +870,21 @@ myapp.controller('profileCtrl', ['$scope', '$http','$location','$rootScope', fun
                     var last = $("#last2").val();
                     var phone = $("#tel1").val();
                     var phone2 = $("#tel2").val();
+                    var email = $("#email11").val();
+                    var email2 = $("#email12").val();
                     var education = $("#educ2").val();
                     var address = $("#address2").val();
-                    var proj = $("#empproj").val();
-                    var position = $("#pos2").val();
-                    var start = $("#startd").val();
-                    var salary = $("#sal2").val();
-                    var loc = $("#locations").val();
 
-                    editEmp(first,last,phone,phone2,education,address,proj,position,start,salary,loc);
+                    editEmp(first,last,phone,phone2,email,email2,education,address);
                   });
 
-                  function editEmp(first,last,phone,phone2,education,address,proj,position,start,salary,loc){
+                  function editEmp(first,last,phone,phone2,email,email2,education,address){
                       var config={
                         headers:{
                           'Content-Type':'application/json'
                         }
                       }
-                      var data_user='{"first_name":"'+first+'","last_name":"'+last+'","telephone":"'+phone+'","telephone2":"'+phone2+'","address":"'+address+'","education":"'+education+'","project_id":"'+proj+'","position":"'+position+'","salary":"'+salary+'","staff_location":"'+loc+'","active_time":"'+start+'"}';
+                      var data_user='{"first_name":"'+first+'","last_name":"'+last+'","telephone":"'+phone+'","telephone2":"'+phone2+'","email":"'+email+'","email2":"'+email2+'","address":"'+address+'","education":"'+education+'"}';
                       // console.log(data_user);
                       $http.post('http://0.0.0.0:8000/adra/employee/edit/'+eid+'/',data_user, config)
                             .success(function(data, status, header, config){
@@ -894,6 +892,33 @@ myapp.controller('profileCtrl', ['$scope', '$http','$location','$rootScope', fun
                                getprofile(eid);
                                    });
                     }
+
+                    $("#saveedit2").click(function(){
+
+                      var proj = $("#empproj").val();
+                      var position = $("#pos2").val();
+                      var start = $("#startd").val();
+                      var salary = $("#sal2").val();
+                      var loc = $("#locations").val();
+
+                      editEmplo(proj,position,start,salary,loc);
+                    });
+
+                    function editEmplo(proj,position,start,salary,loc){
+                        var config={
+                          headers:{
+                            'Content-Type':'application/json'
+                          }
+                        }
+                        var data_user='{"project_id":"'+proj+'","position":"'+position+'","salary":"'+salary+'","staff_location":"'+loc+'","active_time":"'+start+'"}';
+                        // console.log(data_user);
+                        $http.post('http://0.0.0.0:8000/adra/employee/editjob/'+eid+'/',data_user, config)
+                              .success(function(data, status, header, config){
+                                 console.log(data);
+                                 getprofile(eid);
+                                     });
+                      }
+
 
                     $("#termEmp").click(function(){
                       // alert('Hello');
@@ -926,6 +951,25 @@ myapp.controller('profileCtrl', ['$scope', '$http','$location','$rootScope', fun
                                $location.path('/terminated');
                                });
                         };
+
+                        $("#personal-details").click(function(e){
+                            event.preventDefault();
+                            $(".professional-details").hide();
+                            $(".personal-details-hide").show();
+
+                        });
+
+                       $("#professional-details").click(function(e){
+                          event.preventDefault();
+                          $(".personal-details-hide").hide();
+                          $(".professional-details").show();
+
+                       });
+
+                       $('.details-style2').on('click', function(){
+                       $('.details-style2').removeClass('selected');
+                       $(this).addClass('selected');
+                     });
 }]);
 
 
@@ -972,7 +1016,7 @@ myapp.controller('finalslipCtrl', ['$scope', '$http','$location','$rootScope', f
                   var eid = $rootScope.empid;
                   var user = $rootScope.username;
                   $scope.userin = user;
-                  var url = 'http://0.0.0.0:8000/adra/employee/finalpay/'+eid;
+                  var url = 'http://0.0.0.0:8000/adra/onepayroll/'+eid;
                   $http.get(url)
                   .success(function(data){
                   console.log(data);
@@ -994,21 +1038,37 @@ myapp.controller('finalslipCtrl', ['$scope', '$http','$location','$rootScope', f
                   $scope.contacts = data.FinalPay[0].contacts;
                   $scope.dependants = data.FinalPay[0].dependants;
                   $scope.finalNames = data.FinalPay[0].Names;
-                  $scope.finalstart = data.FinalPay[0].Start_Year;
-                  $scope.finalend = data.FinalPay[0].End_Year;
-                  $scope.final_firstyear = data.FinalPay[0].Taxable_1st_year
-                  $scope.final_lastyear = data.FinalPay[0].Taxable_last_year
-                  $scope.finalYears = data.FinalPay[0].years;
-                  $scope.finaltotalt= data.FinalPay[0].total_taxable;
-                  $scope.finaltotald=data.FinalPay[0].Deductables;
-                  $scope.finalnet = data.FinalPay[0].Net;
-                  $scope.salgen = data.FinalPay[0].gen;
-                  $scope.salder = data.FinalPay[0].der;
-                  // // $scope.empadvance = data.Payslip[0].Advance;
-                  // // $scope.empdeduct = data.Payslip[0].Total_Deductables;
-                  // // $scope.empnet = data.Payslip[0].Net_Salary;
-                  // // $scope.empmonth = data.Payslip[0].month;
+                  $scope.final = data.FinalPay[0].final;
+                  $.each(data.FinalPay, function(key, val){
+
+                  var option = "";
+                  var sum = 0;
+                   $.each(val.final,function(k, v){
+                       var tr = "<tr>";
+                       tr += "<td rowspan="+v.year.length+">"+v.project_id+"</td>";
+                       $.each(v.year, function(x, y){
+                           if (x == 0){
+                               tr += "<td>"+y.year+"</td>";
+                               tr += "<td>"+y.month+"</td>";
+                               tr += "<td>"+y.amount+"</td>";
+                               tr += "</tr>";
+                           }else{
+                                tr +="<tr>";
+                               tr += "<td>"+y.year+"</td>";
+                               tr += "<td>"+y.month+"</td>";
+                               tr += "<td>"+y.amount+"</td>";
+                               tr += "</tr>";
+                           }
+                          sum += y.amount;
+                          $scope.finaltotalt = sum;
+                       });
+                       option += tr;
                    });
+                   console.log(val.final);
+                   $("#dataAppend").append(option);
+               })
+
+              });
 
 }]);
 
@@ -1131,7 +1191,7 @@ myapp.controller('terminatedCtrl', ['$scope', '$http','$location','$rootScope', 
 
                     allterminated();
 
-                    $scope.onprofile = function(empid){
+                    $scope.onprofileterm = function(empid){
                             $rootScope.empid = empid
                             $location.path('/profileterm');
                     };
@@ -1165,7 +1225,7 @@ myapp.controller('profiletermCtrl', ['$scope', '$http','$location','$rootScope',
         $scope.userin = user;
 
         function getprofile(eid){
-          var url = 'http://0.0.0.0:8000/adra/employee/profile/'+eid;
+          var url = 'http://0.0.0.0:8000/adra/employee/profileterm/'+eid;
           $http.get(url)
           .success(function(data){
           console.log(data);
@@ -1192,6 +1252,7 @@ myapp.controller('profiletermCtrl', ['$scope', '$http','$location','$rootScope',
           $scope.cv = data.Employee[0].cv;
           $scope.nid = data.Employee[0].nid;
           $scope.contract = data.Employee[0].contract;
+          $scope.picture = data.Employee[0].picture
           });
         }
 

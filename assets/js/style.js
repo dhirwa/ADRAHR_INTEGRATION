@@ -423,7 +423,22 @@ jQuery(document).ready(function($) {
 });
 
 
-
+// $(document).ready(function(){
+//
+//  $("#personal-details").click(function(e){
+//      event.preventDefault();
+//      $(".professional-details").hide();
+//      $(".personal-details-hide").show();
+//
+//  });
+//
+// $("#professional-details").click(function(e){
+//    event.preventDefault();
+//    $(".personal-details-hide").hide();
+//    $(".professional-details").show();
+//
+// });
+// });
 
 
 

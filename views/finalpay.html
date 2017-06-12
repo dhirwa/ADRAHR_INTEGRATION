@@ -57,7 +57,7 @@
                                    <span class="dropdown-toggle" type="text" data-toggle="dropdown"><span class="employee-name-profile">{{names}}</span>
                                    <span class="caret"></span></span>
                                    <ul class="dropdown-menu">
-                                       <li><a href="#/profile">Profile</a></li>
+                                       <li><a href="#/profileterm">Profile</a></li>
                                        <!-- <li><a href="#/letter">Letter of employment</a></li>
                                        <li><a href="#/salary">Salary certificate</a></li> -->
                                        <li><a href="#/termination">Leaving certificate</a></li>
@@ -303,26 +303,20 @@
                               <p class="pay-style">ADRA Rwanda</p>
                               <br>
                               <p><span class="name">Names:</span><span class="name2">{{finalNames}}</span></p>
-                              <p><span class="position">Position:</span><span class="name2"> {{}}</span></p>
+                              <!-- <p><span class="position">Position:</span><span class="name2"> {{}}</span></p> -->
                               <br>
-                              <p><span class="taxable">Taxable income {{finalstart}} :</span><span class="amount">{{final_firstyear}}</span></p>
-                              <p><table>
-                                <tr ng-repeat="item in finalYears">
-                                  <td style="font-size:18px">Taxable Income {{item.year}}:</td>
-                                  <td style="font-size:18px" class="text-left">{{item.taxable}}</td>
-                              </tr>
-                            </table>
-                            </p>
+                              <table style="width:100%" class="table table-bordered">
+                                  <tr>
+                                    <th>Poject</th>
+                                    <th>Year</th>
+                                    <th>Month</th>
+                                    <th>Salary</th>
+                                  </tr>
 
-                              <!-- <p>
-                                  Listing Alternative
-                                <ul>
-                                  <li ng-repeat="item in finalYears">
-                                     Taxable Income {{item.year}}:  {{item.taxable}}
-                                  </li>
-                                </ul>
-                              </p> -->
-                              <p><span class="taxable">Taxable income {{finalend}} :</span><span class="amount">{{final_lastyear}}</span></p>
+                                  <tbody id="dataAppend">
+                                  </tbody>
+
+                              </table>
                               <br>
                               <p><span class="taxable2">Gross pay :</span><span class="amount2">{{finaltotalt}}</span></p>
                               <p><span class="taxable2">Total deduction :</span><span class="amount2">{{finaltotald}}</span></p>

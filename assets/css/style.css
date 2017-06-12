@@ -766,3 +766,34 @@ h4{
     margin: 10px;
     background-color: #4D8885 ;
 }
+
+.table-pay-slip, .name-pay-slip, .details-pay-slip {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 18px;
+}
+.name-pay-slip, .details-pay-slip {
+    padding: 5px;
+    text-align: left;
+}
+
+.details-style2{
+  display: inline-table;
+  border: 2px solid #4D8885 ;
+  padding: 10px;
+  border-radius: 23px;
+  color: #4D8885 ;
+  font-weight: bold;
+  cursor: pointer;
+}
+.right-text{
+  float: right;
+}
+.professional-details{
+  display: none;
+}
+
+.details-style2.selected{
+  background-color: #4D8885 ;
+  color: #fff;
+}
